@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+let OPTIONS_KEY = "options"
+
 @main
 struct CPRHelperv2App: App {
+    @AppStorage("opened") var opened: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
