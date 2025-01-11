@@ -65,7 +65,7 @@ class CPRAudioModel {
     }
     
     private func setupAudioPlayer() {
-        guard let soundURL = Bundle.main.url(forResource: "beeeep", withExtension: "wav") else {
+        guard let soundURL = Bundle.main.url(forResource: "beep", withExtension: "wav") else {
             print("Beep sound file not found")
             return
         }

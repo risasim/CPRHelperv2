@@ -24,7 +24,7 @@ struct WebView: UIViewRepresentable {
 
 struct GIFView: View {
     var body: some View {
-        let localGifURL = Bundle.main.url(forResource: "heartgif", withExtension: "gif")!
+        let localGifURL = Bundle.main.url(forResource: "gifHeart", withExtension: "gif")!
         WebView(url: localGifURL)
             .frame(width: 300, height: 250) // Adjust size as needed
             .overlay(

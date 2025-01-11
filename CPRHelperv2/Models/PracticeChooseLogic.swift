@@ -6,16 +6,26 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum PracticeOptions:Codable {
-    case what,how,positionTrain,rhytmTrain
+    case history,how,positionTrain,rhytmTrain
     
     func title() -> String {
         switch self {
-        case .what: return "What"
+        case .history: return "What"
         case .how: return "How"
         case .positionTrain: return "Position training"
         case .rhytmTrain: return "Rhytm training"
+        }
+    }
+    
+    func destination() ->any View {
+        switch self {
+        case .history: return HistoryView()
+        case .how: return Text("how")
+        case .positionTrain: return PlaceChestView()
+        case .rhytmTrain: return FrequencyView()
         }
     }
 }
@@ -76,7 +86,7 @@ struct PracticePagesHandler{
             }
         }
         var defaultpages = PracticePages()
-        defaultpages.pages.append(contentsOf: [PracticePage(type: PracticeOptions.how),PracticePage(type: PracticeOptions.what),PracticePage(type: PracticeOptions.rhytmTrain),PracticePage(type: PracticeOptions.positionTrain)])
+        defaultpages.pages.append(contentsOf: [PracticePage(type: PracticeOptions.how),PracticePage(type: PracticeOptions.history),PracticePage(type: PracticeOptions.rhytmTrain),PracticePage(type: PracticeOptions.positionTrain)])
         return defaultpages
     }
 }
