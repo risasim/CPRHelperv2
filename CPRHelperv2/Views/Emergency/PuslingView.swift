@@ -46,7 +46,6 @@ struct PulsingView: View {
             }
             .background(content: {
                 ZStack{
-                    Color.white
                     Color.gray.opacity(0.3)
                 }
             })

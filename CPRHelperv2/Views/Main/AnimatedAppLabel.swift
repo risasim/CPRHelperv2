@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+///View to show the animted title on every intro in the app
 struct AnimatedAppLabel: View {
     let appName: String
     @State private var crossOffset: CGFloat = 0
@@ -42,32 +43,42 @@ struct AnimatedAppLabel: View {
         .padding(.leading, 27)
         .onAppear {
             if(performAnimation){
-                // Start cross at the center
-                crossOffset = (textWidth + 30) / 2
-                
-                withAnimation(.easeInOut(duration: 0.5)) {
-                    crossOffset = textWidth + 20 // Move cross to the end
-                }
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    withAnimation(.easeInOut(duration: 1.5)) {
-                        crossOffset = -8 // Move cross to the left side
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                            withAnimation(.smooth(duration: 1.5)) {
-                                textRevealWidth = textWidth + 5 // Reveal text from right to left
-                            }
-                        }
-                    }
-                }
+                runAnimation()
             }
         }
         .onChange(of: scenePhase) {
+            print(scenePhase)
             if scenePhase == .inactive {
                 performAnimation = false
             } else if scenePhase == .active {
                 performAnimation = false
             } else if scenePhase == .background {
                 performAnimation = true
+            }
+        }
+        .onChange(of: performAnimation) {
+            if performAnimation{
+                runAnimation()
+            }
+        }
+    }
+    
+    func runAnimation(){
+        // Start cross at the center
+        crossOffset = (textWidth + 30) / 2
+        
+        withAnimation(.easeInOut(duration: 0.5)) {
+            crossOffset = textWidth + 20 // Move cross to the end
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation(.easeInOut(duration: 1.5)) {
+                crossOffset = -8 // Move cross to the left side
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    withAnimation(.smooth(duration: 1.5)) {
+                        textRevealWidth = textWidth + 5 // Reveal text from right to left
+                    }
+                }
             }
         }
     }
