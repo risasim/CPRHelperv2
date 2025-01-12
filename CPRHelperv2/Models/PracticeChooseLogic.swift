@@ -55,7 +55,7 @@ struct PracticePagesHandler{
     
     mutating func toggle(pageId: UUID){
         if let index = pages.pages.firstIndex(where: { $0.id == pageId }){
-            pages.pages[index].isComplete.toggle()
+            pages.pages[index].isComplete = true
             saveToDefaults()
         }
     }

@@ -11,6 +11,9 @@ struct PracticeTimelineView: View {
     @State var pages = PracticePagesHandler()
     @State var showRealValues: Bool = false
     @Binding var active:Bool
+    @Binding var practiceDetailActive:Bool
+    @Binding var practiceDetailType:PracticePage
+    
     var body: some View {
         VStack(spacing:0) {
             HStack{
@@ -32,37 +35,35 @@ struct PracticeTimelineView: View {
                 }
             }
             ForEach(pages.pages.pages) { page in
-                NavigationLink {
-                    AnyView(page.type.destination())    
-                        .onDisappear{
-                            withAnimation {
-                                pages.toggle(pageId: page.id)
-                            }
-                        }
-                } label: {
-                    HStack{
-                        Image (systemName:(showRealValues ? page.isComplete : false) ? "righttriangle.fill": "righttriangle")
-                            .foregroundStyle((showRealValues ? page.isComplete : false) ? Color.red :  Color.primary)
-                            .rotationEffect(Angle(degrees: 45))
-                            .font(.largeTitle)
-                        MenuNode(title: page.type.title(), icon: "calendar")
-                        Spacer()
-                    }
-                    .font(.title)
-                    .frame(height:90)
-                    .padding(.leading,10)
-                    .overlay(alignment: .leading) {
-                        if(!pages.isLast(id: page.id)){
-                            Rectangle()
-                                .animation(.bouncy,value: page.isComplete)
-                                .frame(width: 1, height: (showRealValues ? page.isComplete : false) ? 68 : 0)
-                                .foregroundColor(.secondary)
-                                .offset(x:12.5, y:54.5)
-                                .padding(.leading,16)
-                        }
+                HStack{
+                    Image (systemName:(showRealValues ? page.isComplete : false) ? "righttriangle.fill": "righttriangle")
+                        .foregroundStyle((showRealValues ? page.isComplete : false) ? Color.red :  Color.primary)
+                        .rotationEffect(Angle(degrees: 45))
+                        .font(.largeTitle)
+                    MenuNode(title: page.type.title(), icon: "calendar")
+                    Spacer()
+                }
+                .font(.title)
+                .frame(height:90)
+                .padding(.leading,10)
+                .overlay(alignment: .leading) {
+                    if(!pages.isLast(id: page.id)){
+                        Rectangle()
+                            .animation(.bouncy,value: page.isComplete)
+                            .frame(width: 1, height: (showRealValues ? page.isComplete : false) ? 68 : 0)
+                            .foregroundColor(.secondary)
+                            .offset(x:12.5, y:54.5)
+                            .padding(.leading,16)
                     }
                 }
-
+                .onTapGesture {
+                    withAnimation {
+                        active = false
+                        practiceDetailType = page
+                        practiceDetailActive = true
+                        pages.toggle(pageId: page.id)
+                    }
+                }
             }
         }
         .onAppear {
@@ -80,6 +81,6 @@ struct PracticeTimelineView: View {
 
 #Preview {
     NavigationStack{
-        PracticeTimelineView(active: .constant(true))
+        PracticeTimelineView(active: .constant(true), practiceDetailActive: .constant(false), practiceDetailType: .constant(PracticePage(type: PracticeOptions.history)))
     }
 }

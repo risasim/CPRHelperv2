@@ -10,6 +10,8 @@ struct MainView: View {
     
     @State var isInfoActive: Bool = false
     @State var practiceActive:Bool = false
+    @State var practiceDetailActive = false
+    @State var practiceDetailType:PracticePage = PracticePage.init(type: .how)
     
     var body: some View {
         NavigationStack{
@@ -42,13 +44,16 @@ struct MainView: View {
             .padding()
             .sheet(isPresented: $practiceActive, content: {
                 NavigationStack{
-                    PracticeTimelineView(active: $practiceActive)
+                    PracticeTimelineView(active: $practiceActive, practiceDetailActive: $practiceDetailActive, practiceDetailType: $practiceDetailType)
                 }
                     .presentationDetents([.medium])
             })
             .sheet(isPresented: $isInfoActive, content: {
                 InfoView(active: $isInfoActive)
             })
+            .fullScreenCover(isPresented: $practiceDetailActive) {
+               AnyView(practiceDetailType.type.destination())
+            }
         }
         .fontDesign(.monospaced)
         .accentColor(.primary)
