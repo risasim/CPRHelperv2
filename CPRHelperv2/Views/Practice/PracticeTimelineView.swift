@@ -10,11 +10,36 @@ import SwiftUI
 struct PracticeTimelineView: View {
     @State var pages = PracticePagesHandler()
     @State var showRealValues: Bool = false
-    
+    @Binding var active:Bool
     var body: some View {
-        ScrollView{
-            VStack(spacing:0) {
-                ForEach(pages.pages.pages) { page in
+        VStack(spacing:0) {
+            HStack{
+                Text("Here are some practice blocks for you to learn")
+                    .padding()
+                    .bold()
+                    .minimumScaleFactor(0.0001)
+                VStack{
+                    Button {
+                        active.toggle()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .bold()
+                            .font(.title)
+                            .padding(5)
+                    }
+                    .buttonStyle(.plain)
+                    Spacer()
+                }
+            }
+            ForEach(pages.pages.pages) { page in
+                NavigationLink {
+                    AnyView(page.type.destination())    
+                        .onDisappear{
+                            withAnimation {
+                                pages.toggle(pageId: page.id)
+                            }
+                        }
+                } label: {
                     HStack{
                         Image (systemName:(showRealValues ? page.isComplete : false) ? "righttriangle.fill": "righttriangle")
                             .foregroundStyle((showRealValues ? page.isComplete : false) ? Color.red :  Color.primary)
@@ -26,11 +51,6 @@ struct PracticeTimelineView: View {
                     .font(.title)
                     .frame(height:90)
                     .padding(.leading,10)
-                    .onTapGesture {
-                        withAnimation {
-                            pages.toggle(pageId: page.id)
-                        }
-                    }
                     .overlay(alignment: .leading) {
                         if(!pages.isLast(id: page.id)){
                             Rectangle()
@@ -42,21 +62,24 @@ struct PracticeTimelineView: View {
                         }
                     }
                 }
+
             }
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    withAnimation {
-                        showRealValues = true
-                    }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                withAnimation {
+                    showRealValues = true
                 }
             }
-            .onDisappear {
-                pages.saveToDefaults()
-            }
+        }
+        .onDisappear {
+            pages.saveToDefaults()
         }
     }
 }
 
 #Preview {
-    PracticeTimelineView()
+    NavigationStack{
+        PracticeTimelineView(active: .constant(true))
+    }
 }

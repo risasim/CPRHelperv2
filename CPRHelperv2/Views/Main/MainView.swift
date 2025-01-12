@@ -9,6 +9,7 @@ import SwiftUI
 struct MainView: View {
     
     @State var isInfoActive: Bool = false
+    @State var practiceActive:Bool = false
     
     var body: some View {
         NavigationStack{
@@ -22,14 +23,15 @@ struct MainView: View {
                         .font(.largeTitle)
                         .labelStyle(MainLabelStyle(isEmergency: true))
                 }
-                NavigationLink(destination: {
-                    PracticeTimelineView()
-                }, label: {
+                Button {
+                    practiceActive.toggle()
+                } label: {
                     Label("Practice", systemImage: "heart.text.square.fill")
                         .font(.title)
                         .labelStyle(MainLabelStyle(isDotted: true))
                         .padding(.vertical)
-                })
+                }
+
                 Spacer()
                 Button(action: {isInfoActive.toggle()}, label: {
                     Label("Info", systemImage: "info.circle")
@@ -38,6 +40,12 @@ struct MainView: View {
                 .padding(.top)
             }
             .padding()
+            .sheet(isPresented: $practiceActive, content: {
+                NavigationStack{
+                    PracticeTimelineView(active: $practiceActive)
+                }
+                    .presentationDetents([.medium])
+            })
             .sheet(isPresented: $isInfoActive, content: {
                 InfoView(active: $isInfoActive)
             })

@@ -13,10 +13,10 @@ enum PracticeOptions:Codable {
     
     func title() -> String {
         switch self {
-        case .history: return "What"
-        case .how: return "How"
-        case .positionTrain: return "Position training"
-        case .rhytmTrain: return "Rhytm training"
+        case .history: return "History"
+        case .how: return "How to perform CPR"
+        case .positionTrain: return "Where to CPR"
+        case .rhytmTrain: return "CPR training"
         }
     }
     
