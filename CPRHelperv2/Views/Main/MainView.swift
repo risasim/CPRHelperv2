@@ -64,7 +64,6 @@ struct MainView: View {
                                     .padding(.leading)
                                     
                             }
-
                             Spacer()
                         }
                         AnyView(practiceDetailType!.type.destination())

@@ -15,8 +15,8 @@ enum PracticeOptions:Codable {
         switch self {
         case .history: return "History"
         case .how: return "How to perform CPR"
-        case .positionTrain: return "Where to CPR"
-        case .rhytmTrain: return "CPR training"
+        case .positionTrain: return "Where to do CPR"
+        case .rhytmTrain: return "CPR rhytm training"
         }
     }
     
@@ -26,6 +26,15 @@ enum PracticeOptions:Codable {
         case .how: return Text("how")
         case .positionTrain: return PlaceChestView()
         case .rhytmTrain: return FrequencyView()
+        }
+    }
+    
+    func icon()->String{
+        switch self {
+        case .history: return "book.circle"
+        case .how: return "questionmark.circle"
+        case .positionTrain: return "mappin.and.ellipse"
+        case .rhytmTrain: return "waveform.path.ecg"
         }
     }
 }
@@ -86,7 +95,7 @@ struct PracticePagesHandler{
             }
         }
         var defaultpages = PracticePages()
-        defaultpages.pages.append(contentsOf: [PracticePage(type: PracticeOptions.how),PracticePage(type: PracticeOptions.history),PracticePage(type: PracticeOptions.rhytmTrain),PracticePage(type: PracticeOptions.positionTrain)])
+        defaultpages.pages.append(contentsOf: [PracticePage(type: PracticeOptions.history),PracticePage(type: PracticeOptions.how),PracticePage(type: PracticeOptions.rhytmTrain),PracticePage(type: PracticeOptions.positionTrain)])
         return defaultpages
     }
 }

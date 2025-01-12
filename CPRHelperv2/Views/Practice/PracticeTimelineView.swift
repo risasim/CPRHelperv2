@@ -40,7 +40,7 @@ struct PracticeTimelineView: View {
                         .foregroundStyle((showRealValues ? page.isComplete : false) ? Color.red :  Color.primary)
                         .rotationEffect(Angle(degrees: 45))
                         .font(.largeTitle)
-                    MenuNode(title: page.type.title(), icon: "calendar")
+                    MenuNode(title: page.type.title(), icon: page.type.icon())
                     Spacer()
                 }
                 .font(.title)

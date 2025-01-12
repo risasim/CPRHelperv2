@@ -91,16 +91,15 @@ struct MenuNode: View {
 
     var body: some View {
         HStack {
-            Image(systemName: icon)
-                .font(.title)
-                .foregroundColor(.blue)
-                .frame(width: 50, height: 50)
-
             Text(title)
                 .font(.headline)
                 .foregroundColor(.primary)
 
             Spacer()
+            Image(systemName: icon)
+                .font(.title)
+                .foregroundColor(.primary)
+                .frame(width: 50, height: 50)
         }
         .padding()
         .background(Color(.systemGray6))
