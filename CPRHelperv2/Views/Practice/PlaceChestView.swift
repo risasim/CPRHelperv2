@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+///View for training the place whrer CPR should be done
 struct PlaceChestView: View {
     @State private var tappedPoint: CGPoint?
     @State private var showFeedback = false

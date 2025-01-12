@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+///All of the practice options
 enum PracticeOptions:Codable {
     case history,how,positionTrain,rhytmTrain
     
@@ -39,7 +40,7 @@ enum PracticeOptions:Codable {
     }
 }
 
-
+///One practice page that will be saved, defined by the ``PracticeOptions``
 struct PracticePage: Identifiable,Codable{
     var id:UUID
     var type: PracticeOptions
@@ -51,10 +52,12 @@ struct PracticePage: Identifiable,Codable{
     }
 }
 
+///Array of PracticePages for simpler saving via JSON
 struct PracticePages:Codable{
     var pages: [PracticePage] = []
 }
 
+///Struct for handling the saving and reading of the ``PracticePages``
 struct PracticePagesHandler{
     var pages: PracticePages=PracticePages()
     

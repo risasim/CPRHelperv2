@@ -7,6 +7,7 @@
 import Foundation
 import SwiftUI
 
+///Style for the buttons in the ``MainView``
 struct MainButtonStyle: ButtonStyle {
     var isDotted:Bool = false
     var isEmergency:Bool=false
@@ -33,7 +34,7 @@ struct MainButtonStyle: ButtonStyle {
     }
 }
 
-
+///Style for the label in the ``MainView``
 struct MainLabelStyle: LabelStyle {
     var isDotted: Bool = false
     var isEmergency: Bool = false

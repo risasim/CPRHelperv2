@@ -8,6 +8,7 @@ import SwiftUI
 import AVKit
 import MediaPlayer
 
+///Main view for emergency, showing all of the stuff 
 struct EmergencyView: View {
     
     @Bindable var model:EmergencyModel = EmergencyModel()

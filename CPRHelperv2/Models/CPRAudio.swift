@@ -9,6 +9,7 @@ import MediaPlayer
 import UIKit
 import SwiftUI
 
+///Class that handles the beeps during the resuscitaion
 class CPRAudioModel {
     private var audioPlayer: AVAudioPlayer?
     private var countingTimer: Timer?

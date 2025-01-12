@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+///View that should call ambulance on pressing
 struct CallView: View {
     
     var body: some View {

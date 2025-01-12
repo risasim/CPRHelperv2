@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+///View for the ``EmergencyChecklistView`` , one list item
 struct EmergencyCheck:View {
     
     var check:String

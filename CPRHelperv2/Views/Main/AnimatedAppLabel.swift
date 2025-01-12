@@ -62,7 +62,7 @@ struct AnimatedAppLabel: View {
             }
         }
     }
-    
+    ///Create the swipe animtaion to reveal the name
     func runAnimation(){
         // Start cross at the center
         crossOffset = (textWidth + 30) / 2
@@ -89,7 +89,7 @@ struct AnimatedAppLabel: View {
     MainView()
 }
 
-
+///Custom shape for the cross at the app title
 struct RoundedEdgeCrossShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()

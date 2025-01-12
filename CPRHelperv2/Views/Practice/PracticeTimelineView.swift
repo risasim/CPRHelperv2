@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///Navigation hub for the practicing, shows in bottom sheet
 struct PracticeTimelineView: View {
     @State var pages = PracticePagesHandler()
     @State var showRealValues: Bool = false

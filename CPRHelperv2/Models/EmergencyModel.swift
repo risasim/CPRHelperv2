@@ -18,6 +18,7 @@ extension UIApplication: OpenURLProtocol {
     }
 }
 
+///Class that is handlind the timing and the calling in ``EmergencyView``
 @Observable
 final class EmergencyModel {
     var timeLabel: String = "00:00:00"

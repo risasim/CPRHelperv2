@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+///Chesklist of what should be done in case you are found in situtation with need of CPR
 struct EmergencyChecklistView:View {
     var body: some View {
         VStack{

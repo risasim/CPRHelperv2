@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+///Info slide about the author and maybe some settings
 struct InfoView: View {
     
     @Binding var active:Bool

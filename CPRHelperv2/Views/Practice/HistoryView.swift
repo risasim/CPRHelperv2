@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+///View depicting the CPR history, simple stylized text with images
 struct HistoryView:View {
     var body: some View {
         VStack{

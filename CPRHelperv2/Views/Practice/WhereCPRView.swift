@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///View that uses ``PlaceChestView`` to teach the placement of cpr
 struct WhereCPRView: View {
     var body: some View {
         VStack{

@@ -8,6 +8,7 @@
 import SwiftUI
 import MediaPlayer
 
+///View showing the animation and setup for the sound aid of the CPR
 struct PulsingView: View {
     @Binding var time:String
     @Binding var audio:CPRAudioModel

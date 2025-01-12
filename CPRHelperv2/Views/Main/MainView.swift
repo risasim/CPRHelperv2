@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+///Root view from which all of the navigation is handled
 struct MainView: View {
     
     @State var isInfoActive: Bool = false

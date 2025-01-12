@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+///Texture for the emergency button in the ``MainView```
 struct WornOutTextureView: View {
     var color: Color = .white
     var baseIntensity: Double = 0.3
