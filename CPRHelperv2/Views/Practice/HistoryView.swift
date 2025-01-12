@@ -9,9 +9,26 @@ import SwiftUI
 struct HistoryView:View {
     var body: some View {
         VStack{
+            HStack{
+                Text("History")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.bottom,0)
+                Spacer()
+            }
             ScrollView{
                 Text(history)
+                HStack{
+                    Image("history")
+                        .resizable()
+                        .scaledToFit()
+                    Image("history2")
+                        .resizable()
+                        .scaledToFit()
+                }
+                Text(history2)
             }
+            .padding(.top,0)
             Button {
                 //
             } label: {
@@ -26,7 +43,6 @@ struct HistoryView:View {
 
         }
         .padding(.horizontal)
-        .navigationTitle("History")
     }
 }
 
@@ -45,6 +61,9 @@ The first organized effort to respond to sudden death emerged in 1767 with the f
 In 1775, Danish physician Peter Christian Abildgaard conducted experiments demonstrating that electrical shocks could revive lifeless animals, laying the groundwork for modern defibrillation techniques. Later, in 1792, English physician James Curry noted the distinction between absolute death and apparent death, emphasizing that the latter could be reversed through appropriate interventions, including external defibrillation.
 [Wikipedia](https://en.wikipedia.org/wiki/History_of_cardiopulmonary_resuscitation#Electrical_shocks)
 
+"""
+
+let history2:LocalizedStringKey = """
 **Modern CPR Development**
 
 The 20th century witnessed significant advancements in CPR. In the 1950s, the combination of chest compressions and rescue breaths became standardized, forming the basis of modern CPR. The American Heart Association (AHA) played a pivotal role by developing science-based CPR guidelines and leading in first aid, CPR, and AED training. 

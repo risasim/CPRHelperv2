@@ -11,7 +11,7 @@ struct MainView: View {
     @State var isInfoActive: Bool = false
     @State var practiceActive:Bool = false
     @State var practiceDetailActive = false
-    @State var practiceDetailType:PracticePage = PracticePage.init(type: .how)
+    @State var practiceDetailType:PracticePage? = nil
     
     var body: some View {
         NavigationStack{
@@ -51,9 +51,26 @@ struct MainView: View {
             .sheet(isPresented: $isInfoActive, content: {
                 InfoView(active: $isInfoActive)
             })
-            .fullScreenCover(isPresented: $practiceDetailActive) {
-               AnyView(practiceDetailType.type.destination())
-            }
+            .if(practiceDetailType != nil, transform: { view in
+                view.fullScreenCover(isPresented: $practiceDetailActive) {
+                    VStack{
+                        HStack{
+                            Button {
+                                withAnimation {
+                                    practiceDetailActive = false
+                                }
+                            } label: {
+                                Label("Back", systemImage: "chevron.left")
+                                    .padding(.leading)
+                                    
+                            }
+
+                            Spacer()
+                        }
+                        AnyView(practiceDetailType!.type.destination())
+                    }
+                }
+            })
         }
         .fontDesign(.monospaced)
         .accentColor(.primary)

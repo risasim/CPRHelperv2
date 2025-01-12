@@ -12,7 +12,7 @@ struct PracticeTimelineView: View {
     @State var showRealValues: Bool = false
     @Binding var active:Bool
     @Binding var practiceDetailActive:Bool
-    @Binding var practiceDetailType:PracticePage
+    @Binding var practiceDetailType:PracticePage?
     
     var body: some View {
         VStack(spacing:0) {
