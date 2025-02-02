@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "IMG_2224-removebg-preview-cropped.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

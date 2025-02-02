@@ -15,6 +15,7 @@ class CPRAudioModel {
     private var countingTimer: Timer?
     private var beepCount: Int = 0
     private var isBreathing: Bool = false
+    var image = "uncompressed"
     var soundOn: Bool = true {
         didSet {
             updateAudioState()
@@ -135,6 +136,8 @@ class CPRAudioModel {
     private func countContinuous() {
         if soundOn {
             playBeep()
+        }else{
+            fakePlayBeep()
         }
         beepCount += 1
         updateStatus()
@@ -142,6 +145,7 @@ class CPRAudioModel {
     
     private func countWithBreaths() {
         if self.isBreathing {
+            self.image = "breathe"
             if self.beepCount >= 6 {
                 self.isBreathing = false
                 self.beepCount = 0
@@ -155,6 +159,8 @@ class CPRAudioModel {
             } else {
                 if soundOn {
                     playBeep()
+                }else{
+                    fakePlayBeep()
                 }
                 self.beepCount += 1
             }
@@ -164,9 +170,9 @@ class CPRAudioModel {
     
     private func updateStatus() {
         if withBreaths {
-            status = isBreathing ? "Do two breaths" : "Resuscitate \(30-beepCount)"
+            self.status = isBreathing ? "Do two breaths" : "Resuscitate \(30-beepCount)"
         } else {
-            status = "Resuscitate (\(beepCount))"
+            self.status = "Resuscitate (\(beepCount))"
         }
     }
     
@@ -174,9 +180,19 @@ class CPRAudioModel {
         debugPrint("wtf")
         audioPlayer?.currentTime = 0
         audioPlayer?.play()
+        self.image = "compressed"
         
         DispatchQueue.main.asyncAfter(deadline: .now() + beepDuration) {
             self.audioPlayer?.stop()
+            self.image = "uncompressed"
+        }
+    }
+    
+    private func fakePlayBeep() {
+        self.image = "compressed"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + beepDuration) {
+            self.image = "uncompressed"
         }
     }
     

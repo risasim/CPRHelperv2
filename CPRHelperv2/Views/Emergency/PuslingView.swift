@@ -32,7 +32,9 @@ struct PulsingView: View {
                 )
             Spacer()
             Text("\(audio.status)")
-            Text("Animation")
+            Image(audio.image)
+                .resizable()
+                .scaledToFit()
             Spacer()
             HStack{
                 Toggle("Sound on", isOn: $audio.soundOn)
