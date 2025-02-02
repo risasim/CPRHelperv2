@@ -35,7 +35,7 @@ struct PulsingView: View {
             Image(audio.image)
                 .resizable()
                 .scaledToFit()
-            Spacer()
+                .offset(y:8)
             HStack{
                 Toggle("Sound on", isOn: $audio.soundOn)
                     .font(.headline)
