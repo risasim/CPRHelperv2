@@ -67,7 +67,7 @@ struct MainView: View {
                             }
                             Spacer()
                         }
-                        AnyView(practiceDetailType!.type.destination())
+                        AnyView(practiceDetailType!.type.destination($practiceDetailType))
                     }
                 }
             })

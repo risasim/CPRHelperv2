@@ -19,9 +19,10 @@ struct EmergencyCheck:View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.1)
             Spacer()
-            Image(systemName: isChecked ? isCheck ? "checkmark.circle" : "xmark.circle" : "circle")
+            Image(systemName: isCheck ? "checkmark.circle" : "xmark.circle")
                 .font(.title2)
                 .bold()
+                .foregroundStyle(isChecked ? isCheck ? Color.green : Color.red : Color.gray.opacity(0.4), Color.primary)
                 .if(isChecked) { view in
                     view.symbolRenderingMode(.palette)
                         .foregroundStyle(isCheck ? Color.green : Color.red, Color.primary)

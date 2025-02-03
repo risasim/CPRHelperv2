@@ -11,6 +11,7 @@ struct PlaceChestView: View {
     @State private var tappedPoint: CGPoint?
     @State private var showFeedback = false
     @State private var isCorrect = false
+    @Binding var activeView:PracticePage?
     
     let correctArea = CGRect(x: 0.45, y: 0.4, width: 0.1, height: 0.1)
     
@@ -38,15 +39,31 @@ struct PlaceChestView: View {
                 self.showFeedback = true
             }
             .alert(isPresented: $showFeedback) {
-                Alert(
-                    title: Text(isCorrect ? "Correct!" : "Not quite right"),
-                    message: Text(isCorrect ? "You've identified the correct area for CPR." : "The correct area for CPR is in the center of the chest, between the nipples."),
-                    dismissButton: .default(Text("Try Again")) {
-                        DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
-                            self.tappedPoint = nil
+                if(isCorrect){
+                    Alert(
+                        title: Text("Correct!"),
+                        message: Text("You've identified the correct area for CPR."),
+                        dismissButton: .default(Text("Try Again")) {
+                            DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
+                                self.tappedPoint = nil
+                            }
                         }
-                    }
-                )
+                    )
+                }else{
+                    Alert(
+                        title: Text("Not quite right"),
+                        message: Text("The correct area for CPR is in the center of the chest, between the nipples."),
+                        primaryButton: .default(Text("Go back")){
+                            activeView = nil
+                        },
+                        secondaryButton: .default(Text("Try Again")) {
+                            DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
+                                self.tappedPoint = nil
+                            }
+                        }
+                    )
+                }
+                
             }
         }
     }
@@ -59,5 +76,5 @@ struct PlaceChestView: View {
 }
 
 #Preview {
-    PlaceChestView()
+    PlaceChestView(activeView: .constant(PracticePage(type: .history)))
 }

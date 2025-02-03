@@ -26,7 +26,7 @@ struct PracticeView: View {
                 PracticeListItem(text: "When to do CPR?", systemImage: "clock")
             }
             NavigationLink {
-                PlaceChestView()
+                PlaceChestTraining(isActive: .constant(PracticePage(type: .history)))
             } label: {
                 PracticeListItem(text: "Where to do CPR?",systemImage: "location")
             }

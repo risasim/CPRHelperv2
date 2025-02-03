@@ -35,7 +35,3 @@ struct EmergencyChecklistView:View {
 #Preview {
     EmergencyChecklistView()
 }
-
-#Preview(body: {
-    EmergencyView()
-})
