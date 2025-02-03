@@ -13,6 +13,7 @@ struct MainView: View {
     @State var practiceActive:Bool = false
     @State var practiceDetailActive = false
     @State var practiceDetailType:PracticePage? = nil
+    @State private var model = EmergencyModel()
     
     var body: some View {
         NavigationStack{
@@ -20,7 +21,15 @@ struct MainView: View {
                 AnimatedAppLabel(appName: "CPR Helper")
                     .padding(.bottom)
                 NavigationLink {
-                    EmergencyView()
+                    EmergencyView(model: $model)
+                        .onAppear {
+                            model.startTimer()
+                            model.audioModel.toggleActive()
+                        }
+                        .onDisappear(perform: {
+                            model.audioModel.toggleActive()
+                            model.startTimer()
+                        })
                 } label: {
                     Label("Emergency", systemImage: "waveform.path.ecg")
                         .font(.largeTitle)

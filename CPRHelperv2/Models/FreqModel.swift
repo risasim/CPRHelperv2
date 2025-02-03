@@ -136,7 +136,6 @@ class FreqModel:ObservableObject{
     }
     ///Do average from the seconds that passed
     private func getAverageSoFar(){
-        print("got here")
         if(Int(secs) >= 2){
             var sum = 0
             for i in 0..<Int(self.secs)-1{

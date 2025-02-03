@@ -30,12 +30,14 @@ struct PulsingView: View {
                         topTrailingRadius: 10
                     )
                 )
-            Spacer()
-            Text("\(audio.status)")
-            Image(audio.image)
-                .resizable()
-                .scaledToFit()
-                .offset(y:8)
+            VStack{
+                Spacer()
+                Text("\(audio.status)")
+                Image(audio.image)
+                    .resizable()
+                    .scaledToFit()
+                    .offset(y:8)
+            }
             HStack{
                 Toggle("Sound on", isOn: $audio.soundOn)
                     .font(.headline)
@@ -61,6 +63,11 @@ struct PulsingView: View {
                 )
             )
         }
+        .background(content: {
+            ZStack{
+                Color.white
+            }
+        })
         .frame(maxWidth: .infinity,maxHeight: .infinity)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
@@ -70,6 +77,6 @@ struct PulsingView: View {
 }
 
 #Preview {
-    EmergencyView()
+    EmergencyView(model: .constant(EmergencyModel()))
 }
 

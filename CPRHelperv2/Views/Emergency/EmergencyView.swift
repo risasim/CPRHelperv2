@@ -11,18 +11,12 @@ import MediaPlayer
 ///Main view for emergency, showing all of the stuff 
 struct EmergencyView: View {
     
-    @Bindable var model:EmergencyModel = EmergencyModel()
+    @Binding var model:EmergencyModel
     
     var body: some View {
         VStack{
             PulsingView(time: $model.timeLabel,audio: $model.audioModel)
                 .padding(.horizontal,5)
-                .onAppear(perform: {
-                    model.startTimer()
-                })
-                .onDisappear(perform: {
-                    model.startTimer()
-                })
             HStack{
                 EmergencyChecklistView()
                 CallView()
@@ -38,11 +32,7 @@ struct EmergencyView: View {
                 .padding(.horizontal,20)
         }
         .onAppear(perform: {
-            model.audioModel.toggleActive()
             increaseVolume()
-        })
-        .onDisappear(perform: {
-            model.audioModel.toggleActive()
         })
         .toolbar(content: {
             ToolbarItem(placement: .principal) {
@@ -54,7 +44,9 @@ struct EmergencyView: View {
 }
 
 #Preview {
-    EmergencyView()
+    NavigationStack{
+        EmergencyView(model: .constant(EmergencyModel()))
+    }
 }
 
 
