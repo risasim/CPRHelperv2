@@ -17,7 +17,7 @@ struct AnimatedAppLabel: View {
     @AppStorage("performAnimation") var performAnimation:Bool = true
     
     private var textWidth: CGFloat {
-        CGFloat(appName.count * 16) // Approximate width per character
+        CGFloat(appName.count * 16)
     }
     
     var body: some View {

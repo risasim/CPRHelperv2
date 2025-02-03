@@ -41,9 +41,12 @@ struct PlaceChestView: View {
             .alert(isPresented: $showFeedback) {
                 if(isCorrect){
                     Alert(
-                        title: Text("Correct!"),
-                        message: Text("You've identified the correct area for CPR."),
-                        dismissButton: .default(Text("Try Again")) {
+                        title: Text("Not quite right"),
+                        message: Text("The correct area for CPR is in the center of the chest, between the nipples."),
+                        primaryButton: .default(Text("Go back")){
+                            activeView = nil
+                        },
+                        secondaryButton: .default(Text("Try Again")) {
                             DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
                                 self.tappedPoint = nil
                             }
@@ -51,12 +54,9 @@ struct PlaceChestView: View {
                     )
                 }else{
                     Alert(
-                        title: Text("Not quite right"),
-                        message: Text("The correct area for CPR is in the center of the chest, between the nipples."),
-                        primaryButton: .default(Text("Go back")){
-                            activeView = nil
-                        },
-                        secondaryButton: .default(Text("Try Again")) {
+                        title: Text("Correct!"),
+                        message: Text("You've identified the correct area for CPR."),
+                        dismissButton: .default(Text("Try Again")) {
                             DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
                                 self.tappedPoint = nil
                             }
