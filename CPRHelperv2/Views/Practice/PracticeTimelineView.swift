@@ -29,7 +29,7 @@ struct PracticeTimelineView: View {
                         Image(systemName: "xmark")
                             .bold()
                             .font(.title)
-                            .padding(5)
+                            .padding(10)
                     }
                     .buttonStyle(.plain)
                     Spacer()

@@ -15,10 +15,10 @@ let heartFacts = [ Text("Heart pumps about 2,000 gallons of blood daily"),
                    Text("Heart can continue beating even when separated from the body")]
 let phoneNumbers:[String] = [
     // Global Standard Emergency Numbers
-    "112", "911",
+    "112",
 
     // Europe
-    "999", "110", "115", "118", "122", "123", "144", "150", "155", "158", "160", "197", "199",
+    "110", "115", "118", "122", "123", "144", "150", "155", "158", "160", "197", "199",
 
     // North America
     "911",
@@ -36,5 +36,5 @@ let phoneNumbers:[String] = [
     "000", "111",
 
     // Middle East & Additional Regions
-    "997", "122", "130", "140"
+    "997","130", "140"
 ]

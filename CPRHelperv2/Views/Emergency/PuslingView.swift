@@ -63,11 +63,6 @@ struct PulsingView: View {
                 )
             )
         }
-        .background(content: {
-            ZStack{
-                Color.white
-            }
-        })
         .frame(maxWidth: .infinity,maxHeight: .infinity)
         .overlay(
             RoundedRectangle(cornerRadius: 10)

@@ -3,6 +3,26 @@
     {
       "filename" : "IMG_2224-removebg-preview-cropped.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "IMG_2224-removebg-preview-cropped 1.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Untitled (2).svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

@@ -47,9 +47,9 @@ struct MainView: View {
                 Spacer()
                 Button(action: {isInfoActive.toggle()}, label: {
                     Label("Info", systemImage: "info.circle")
+                        .frame(maxWidth: .infinity,maxHeight: 60)
+                        .labelStyle(MainLabelStyle())
                 })
-                .buttonStyle(MainButtonStyle())
-                .padding(.top)
             }
             .padding()
             .sheet(isPresented: $practiceActive, content: {
@@ -72,6 +72,7 @@ struct MainView: View {
                             } label: {
                                 Label("Back", systemImage: "chevron.left")
                                     .padding(.leading)
+                                    .padding(.bottom)
                                     
                             }
                             Spacer()
