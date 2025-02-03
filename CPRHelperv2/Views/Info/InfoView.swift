@@ -6,10 +6,11 @@
 //
 import SwiftUI
 
-///Info slide about the author and maybe some settings
+///Info slide about the author and maybe some Info
 struct InfoView: View {
     
     @Binding var active:Bool
+    @AppStorage("emergencyNumber") var number:Int = 911
     
     var body: some View {
         VStack{
@@ -21,9 +22,34 @@ struct InfoView: View {
                         .bold()
                         .font(.title)
                         .fontDesign(.monospaced)
-                        .padding()
+                        .padding([.top,.trailing])
                 })
             }
+            GroupBox {
+                Divider().padding(.vertical, 4)
+                HStack(alignment: .center, spacing: 10){
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(9)
+                    Text("CPR Helper is an app that teaches CPR through simulations. Designed for the Swift Student Challenge 2025, it features step-by-step guidance and an emergency button to prepare users for real-life situations.")
+                        .font(.footnote)
+                }
+            } label: {
+                InfoLabelView(label: "CPR Helper", image: "info.circle")
+            }
+            .padding(.top, 10)
+            GroupBox(content: {
+                InfoRowView(label: "Developer", description: "Richard Šimoník")
+                InfoRowView(label: "Compability", description: "iOS 18")
+                InfoRowView(label: "Instagram", linkLabel: "@risasimonik", linkDestination: "instagram.com/risasimonik")
+                InfoRowView(label: "X", linkLabel: "@richiesimonik", linkDestination: "twitter.com/richiesimonik")
+                InfoRowView(label: "SwiftUI", description: "6.0")
+                InfoRowView(label: "App version",description: "0.9")
+            }, label: {
+                InfoLabelView(label: "About app", image: "apps.iphone")
+            })
         }
         Spacer()
     }

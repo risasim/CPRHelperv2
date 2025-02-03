@@ -103,3 +103,27 @@ struct PulsingToggleStyle: ToggleStyle {
         }
     }
 }
+
+struct BorderedBackgroundModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(style: StrokeStyle(lineWidth: 3))
+            )
+            .background(
+                ZStack {
+                    Color.gray.opacity(0.3)
+                }
+            )
+            .clipShape(
+                RoundedRectangle(cornerRadius: 10)
+            )
+    }
+}
+
+extension View {
+    func borderedBackground() -> some View {
+        self.modifier(BorderedBackgroundModifier())
+    }
+}

@@ -14,12 +14,13 @@ struct FrequencyView: View {
     @State private var animateShow = false
     @State private var animateFade = false
     @State private var sheetContentHeight = CGFloat(0)
+    @State private var disabled = false
     
     var body: some View {
         NavigationStack{
             VStack {
                 Text("Time: "+String(Int(60.0-model.secs)))
-                Text(String(model.avgOfLastTwo))
+                //Text(String(model.avgOfLastTwo))
                 HStack{
                     ZStack{
                         GaugeView(curFreq: $model.averageSoFar)
@@ -46,7 +47,13 @@ struct FrequencyView: View {
                         .font(.title)
                         .padding(.horizontal)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                }.buttonStyle(.bordered)
+                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 90)
+                        .stroke(style: StrokeStyle(lineWidth: 3))
+                )
+                .disabled(disabled)
+                .buttonStyle(.bordered)
                     .tint(model.started ? Color.red: Color.blue)
                     .accessibilityIdentifier("PushResusctiateButton")
                 
@@ -60,6 +67,14 @@ struct FrequencyView: View {
                     animateFade = newValue
                 }
             }
+            .onChange(of: model.started, { oldValue, newValue in
+                if(!newValue){
+                    disabled = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        disabled = false
+                    }
+                }
+            })
             .sheet(isPresented: $model.showResults) {
                 FinalResView(showResults: $model.showResults, data: model.avgsPerSeconds, curFreq: model.averageSoFar)
                     .background {

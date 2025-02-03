@@ -39,7 +39,7 @@ struct FreqResultsView: View {
                         .font(.headline)
                 }
             }
-            .multilineTextAlignment(.leading)
+            .multilineTextAlignment(.center)
             .fixedSize(horizontal: false, vertical: true)
             Text("Your final frequency was \(fFrequecny) push/min.")
                 .font(.headline)

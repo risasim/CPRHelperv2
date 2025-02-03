@@ -10,6 +10,7 @@ import UIKit
 import SwiftUI
 
 ///Class that handles the beeps during the resuscitaion
+@Observable
 class CPRAudioModel {
     private var audioPlayer: AVAudioPlayer?
     private var countingTimer: Timer?
@@ -41,10 +42,11 @@ class CPRAudioModel {
     private let beepDuration: TimeInterval = 0.153  // 150 milliseconds
     private let beepInterval: TimeInterval = 0.6   // 100 BPM
     
-    init() {
+    init(startSound: Bool = true) {
         setupAudioSession()
         setupAudioPlayer()
         updateStatus()
+        self.soundOn = startSound
 #if DEBUG
         self.soundOn = false
 #endif
