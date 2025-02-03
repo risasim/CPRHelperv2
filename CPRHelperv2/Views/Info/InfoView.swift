@@ -10,7 +10,7 @@ import SwiftUI
 struct InfoView: View {
     
     @Binding var active:Bool
-    @AppStorage("emergencyNumber") var number:Int = 911
+    @AppStorage("emergencyNumber") var number:String = "911"
     
     var body: some View {
         VStack{
@@ -40,6 +40,22 @@ struct InfoView: View {
                 InfoLabelView(label: "CPR Helper", image: "info.circle")
             }
             .padding(.top, 10)
+            GroupBox {
+                Divider().padding(.vertical, 4)
+                HStack{
+                    Text("Emergency phone number")
+                        .foregroundColor(.gray)
+                    Spacer()
+                    Picker("set.linkLang", selection: $number) {
+                        ForEach(phoneNumbers, id: \.self) { num in
+                            Text(num)
+                                .tag(num)
+                        }
+                    }
+                }
+            } label: {
+                InfoLabelView(label: "Settings", image: "gear")
+            }
             GroupBox(content: {
                 InfoRowView(label: "Developer", description: "Richard Šimoník")
                 InfoRowView(label: "Compability", description: "iOS 18")

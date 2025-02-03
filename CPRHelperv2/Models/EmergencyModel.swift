@@ -49,8 +49,9 @@ final class EmergencyModel {
     }
     
     func callNumber() {
+        let emergencyNumber = UserDefaults.standard.string(forKey: "emergencyNumber") ?? "911"
         DispatchQueue.main.async {
-            guard let url = URL(string: "tel://08000480408") else { return }
+            guard let url = URL(string: "tel://\(emergencyNumber)") else { return }
             self.openURL.open(url)
         }
     }
