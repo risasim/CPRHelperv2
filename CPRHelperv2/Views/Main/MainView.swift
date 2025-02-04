@@ -14,6 +14,7 @@ struct MainView: View {
     @State var practiceDetailActive = false
     @State var practiceDetailType:PracticePage? = nil
     @State private var model = EmergencyModel()
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationStack{
@@ -78,6 +79,26 @@ struct MainView: View {
                             Spacer()
                         }
                         AnyView(practiceDetailType!.type.destination($practiceDetailType))
+                    }
+                    //TODO Add negation so it displays on the first opening
+                    .if(practiceDetailType!.isComplete) { view in
+                        view
+                            .overlay{
+                                ZStack{
+                                    colorScheme == .dark ? Color.black.opacity(0.8).ignoresSafeArea() : Color.white.opacity(0.9).ignoresSafeArea()
+                                    VStack{
+                                        Text((practiceDetailType?.type.explainer())!)
+                                        Button {
+                                            practiceDetailType!.isComplete.toggle()
+                                        } label: {
+                                            Label("Got it!", systemImage: "checkmark")
+                                                .padding()
+                                        }
+                                    }
+                                    .padding()
+                                    .multilineTextAlignment(.center)
+                                }
+                            }
                     }
                 }
             })
