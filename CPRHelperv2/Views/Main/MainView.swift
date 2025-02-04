@@ -85,7 +85,12 @@ struct MainView: View {
                         view
                             .overlay{
                                 ZStack{
-                                    colorScheme == .dark ? Color.black.opacity(0.8).ignoresSafeArea() : Color.white.opacity(0.9).ignoresSafeArea()
+                                    Color.clear
+                                        .background(
+                                            .ultraThinMaterial,
+                                            in: RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                        )
+                                        .ignoresSafeArea()
                                     VStack{
                                         Text((practiceDetailType?.type.explainer())!)
                                         Button {
