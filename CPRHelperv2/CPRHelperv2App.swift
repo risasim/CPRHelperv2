@@ -15,7 +15,12 @@ struct CPRHelperv2App: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ZStack{
+                MainView()
+                if(!opened){
+                    OnBoardingsView()
+                }
+            }
         }
     }
 }

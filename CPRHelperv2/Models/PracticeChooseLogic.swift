@@ -44,7 +44,7 @@ enum PracticeOptions:Codable {
         case .history: return "In this practice you will learn about the history of CPR and with quick quiz, you will test how much attention have you paid to this text."
         case .how: return "In this practice you will learn about how to perform CPR correctly step by step. You can test features avaiable in the emergency button in between texts."
         case .positionTrain: return "In this practice you will test your knowledge about where is CPR performed."
-        case .rhytmTrain: return "In this practice you will test how well you can keep rhytm during CPR for one minute, and then you will receive evaulation score."
+        case .rhytmTrain: return "In this practice you will test how well you can keep rhytm during CPR for one minute after which you will receive evaulation score."
         }
     }
 }

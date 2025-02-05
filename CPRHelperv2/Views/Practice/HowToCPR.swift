@@ -62,7 +62,7 @@ struct HowToCPR: View {
     
     **2. Check Responsiveness** – Tap the person and shout, *"Are you okay?"* If there is no response, proceed. 
     
-    **3. Call for Help** – Dial emergency services (e.g., **112** in Europe, **911** in the U.S.). If others are around, ask someone to get an **AED** (Automated External Defibrillator).  
+    **3. Call for Help** – Dial emergency services (e.g., **112** in Europe, **911** in the U.S., you can set the default emergency number in the settings). If others are around, ask someone to get an **AED** (Automated External Defibrillator).  
     
     **4. Check for Breathing** – Look, listen, and feel for normal breathing for no more than **10 seconds**. If the person is not breathing or only gasping, start CPR.  
     
@@ -75,7 +75,7 @@ struct HowToCPR: View {
         - Push hard and fast (*5-6 cm deep*, at a rate of *100-120 compressions per minute*).
         - Allow the chest to fully recoil between compressions.
     
-    **7. Rescue Breaths (if trained)** –
+    **7. Rescue Breaths (if trained)** 
         - Pinch the nose, give **two breaths**, ensuring the chest rises.
         - Continue with **30 compressions**, then **2 breaths**.
         - If unsure, stick to **hands-only CPR** (continuous compressions).
@@ -91,4 +91,5 @@ struct HowToCPR: View {
 
 #Preview {
     HowToCPR()
+        .fontDesign(.monospaced)
 }
