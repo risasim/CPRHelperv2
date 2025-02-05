@@ -38,7 +38,6 @@ let phoneNumbers:[String] = [
     // Middle East & Additional Regions
     "997","130", "140"
 ]
-//TODO onboarding similar to the intro thin material blur, with showing the screens.
 let onboarding1:LocalizedStringResource = """
 Welcome to CPR Helper. My name is Richard and I have created this app to educate users on how to perform CPR and in case of an unfortune event even possible help them. The app consists of two main elements:
 """
