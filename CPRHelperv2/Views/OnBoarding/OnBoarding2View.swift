@@ -13,14 +13,17 @@ struct OnBoarding2View: View {
     var body: some View {
         VStack{
             Text(onboarding2)
-                .padding()
+                .font(.title2)
+                .padding(.horizontal)
                 .multilineTextAlignment(.leading)
             EmergencyView(model: $model)
-                .padding()
                 .minimumScaleFactor(0.001)
-                .frame(maxWidth: 380)
-                .disabled(true)
+                .frame(maxWidth: 360)
+                .padding()
                 .borderedBackground()
+                .padding([.bottom,.leading,.trailing])
+                .disabled(true)
+            Spacer()
         }
         
     }

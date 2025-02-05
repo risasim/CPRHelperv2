@@ -72,7 +72,7 @@ struct HowToCPR: View {
     let cprGuidePart3:LocalizedStringResource = """
     **6. Give Chest Compressions** –
         - Place both hands in the center of the chest.
-        - Push hard and fast (*5-6 cm deep*, at a rate of *100-120 compressions per minute*).
+        - Push hard and fast (*5-6 cm deep* do not be afraid to push even when you hear some ribs breaking, at a rate of *100-120 compressions per minute*).
         - Allow the chest to fully recoil between compressions.
     
     **7. Rescue Breaths (if trained)** 

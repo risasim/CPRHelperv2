@@ -12,18 +12,20 @@ struct OnBoarding1View: View {
         ZStack{
            
             VStack{
-                Image("logo")
-                    .resizable()
-                    .scaledToFit()
-                    .padding().frame(maxWidth: 200)
+                Spacer()
                 HStack{
                     Text("Hello!")
-                        .font(.title)
+                        .font(.largeTitle)
                         .padding()
                     Spacer()
                 }
                 Text(onboarding1)
+                    .font(.title2)
                     .padding()
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .padding().frame(maxWidth: 200)
                 Spacer()
             }
             .multilineTextAlignment(.leading)

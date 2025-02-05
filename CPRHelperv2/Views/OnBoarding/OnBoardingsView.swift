@@ -29,4 +29,5 @@ struct OnBoardingsView: View {
 
 #Preview {
     OnBoardingsView()
+        .fontDesign(.monospaced)
 }

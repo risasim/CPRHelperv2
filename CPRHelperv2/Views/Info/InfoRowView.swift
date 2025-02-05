@@ -16,7 +16,8 @@ struct InfoRowView: View {
     
     var body: some View {
         VStack {
-            Divider().padding(.vertical, 4)
+            //TODO change color ot primary
+            Divider().overlay(.primary).padding(.vertical, 4)
             HStack{
                 Text(LocalizedStringKey(label))
                     .foregroundColor(.gray)

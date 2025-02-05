@@ -13,7 +13,7 @@ struct PlaceChestView: View {
     @State private var isCorrect = false
     @Binding var activeView:PracticePage?
     
-    let correctArea = CGRect(x: 0.45, y: 0.4, width: 0.1, height: 0.1)
+    let correctArea = CGRect(x: 0.5, y: 0.4, width: 0.11, height: 0.15)
     
     var body: some View {
         GeometryReader { geometry in
@@ -23,7 +23,6 @@ struct PlaceChestView: View {
                     .scaledToFit()
                     .frame(width: geometry.size.width * 0.8)
                     .foregroundColor(.gray)
-                
                 if let point = tappedPoint {
                     Image(systemName: "hand.raised.fill")
                         .font(.system(size: 50))
@@ -41,12 +40,9 @@ struct PlaceChestView: View {
             .alert(isPresented: $showFeedback) {
                 if(isCorrect){
                     Alert(
-                        title: Text("Not quite right"),
-                        message: Text("The correct area for CPR is in the center of the chest, between the nipples."),
-                        primaryButton: .default(Text("Go back")){
-                            activeView = nil
-                        },
-                        secondaryButton: .default(Text("Try Again")) {
+                        title: Text("Correct!"),
+                        message: Text("You've identified the correct area for CPR."),
+                        dismissButton: .default(Text("Try Again")) {
                             DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
                                 self.tappedPoint = nil
                             }
@@ -54,9 +50,12 @@ struct PlaceChestView: View {
                     )
                 }else{
                     Alert(
-                        title: Text("Correct!"),
-                        message: Text("You've identified the correct area for CPR."),
-                        dismissButton: .default(Text("Try Again")) {
+                        title: Text("Not quite right"),
+                        message: Text("The correct area for CPR is in the center of the chest, between the nipples."),
+                        primaryButton: .default(Text("Go back")){
+                            activeView = nil
+                        },
+                        secondaryButton: .default(Text("Try Again")) {
                             DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
                                 self.tappedPoint = nil
                             }

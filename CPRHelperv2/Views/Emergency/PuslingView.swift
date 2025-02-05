@@ -43,11 +43,13 @@ struct PulsingView: View {
                     .font(.headline)
                     .padding(5)
                     .toggleStyle(PulsingToggleStyle(systemImageActive: "speaker.wave.2", systemImageNonActive: "speaker.slash"))
+                    .minimumScaleFactor(0.001)
                 Spacer(minLength: 40)
                 Toggle("With breaths", isOn: $audio.withBreaths)
                     .font(.headline)
                     .padding(5)
                     .toggleStyle(PulsingToggleStyle(systemImageActive: "lungs", systemImageNonActive: "lungs.slash",nonCustom: false))
+                    .minimumScaleFactor(0.001)
             }
             .background(content: {
                 ZStack{

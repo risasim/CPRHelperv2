@@ -26,7 +26,6 @@ struct InfoView: View {
                 })
             }
             GroupBox {
-                Divider().padding(.vertical, 4)
                 HStack(alignment: .center, spacing: 10){
                     Image("logo")
                         .resizable()
@@ -39,9 +38,10 @@ struct InfoView: View {
             } label: {
                 InfoLabelView(label: "CPR Helper", image: "info.circle")
             }
+            .borderedBackground()
             .padding(.top, 10)
             GroupBox {
-                Divider().padding(.vertical, 4)
+                Divider().overlay(.primary).padding(.vertical, 4)
                 HStack{
                     Text("Emergency phone number")
                         .foregroundColor(.gray)
@@ -55,7 +55,7 @@ struct InfoView: View {
                 }
             } label: {
                 InfoLabelView(label: "Settings", image: "gear")
-            }
+            }.borderedBackground()
             GroupBox(content: {
                 InfoRowView(label: "Developer", description: "Richard Šimoník")
                 InfoRowView(label: "Compability", description: "iOS 18")
@@ -65,8 +65,9 @@ struct InfoView: View {
                 InfoRowView(label: "App version",description: "0.9")
             }, label: {
                 InfoLabelView(label: "About app", image: "apps.iphone")
-            })
+            }).borderedBackground()
         }
+        .padding(.horizontal)
         Spacer()
     }
 }
