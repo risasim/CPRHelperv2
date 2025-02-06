@@ -19,6 +19,7 @@ struct HowToCPR: View {
                 .multilineTextAlignment(.center)
                 .padding(.bottom)
             ScrollView{
+                //TODO add picture of clearing airways
                 Text(cprGuidePart1)
                 HStack{
                     EmergencyChecklistView()
