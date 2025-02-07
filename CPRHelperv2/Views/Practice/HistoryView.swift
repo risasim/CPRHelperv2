@@ -37,12 +37,10 @@ struct HistoryView:View {
             } label: {
                 Text("Take quiz")
                     .padding()
+                    .foregroundStyle(Color.primary)
             }
             .buttonStyle(.plain)
-            .background {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundStyle(.tertiary)
-            }
+            .borderedBackground()
 
         }
         .navigationDestination(isPresented: $showQuiz, destination: {
