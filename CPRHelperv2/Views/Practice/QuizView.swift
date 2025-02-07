@@ -9,45 +9,55 @@ import SwiftUI
 
 ///View that shows Quiz for the history part of the Practice.
 struct QuizView: View {
-    @State private var currentQuestionIndex = 0
-    @State private var selectedAnswerIndex: Int? = nil
-    @State private var showFeedback = false
-    @State private var score = 0
-    @State private var currentQuestions = questions.shuffled()
     @Binding var isActive:PracticePage?
+    @State var model = QuizModel()
+    @Binding var show:Bool
     
     var body: some View {
         VStack {
+            HStack{
+                Button {
+                    withAnimation {
+                        show = false
+                    }
+                } label: {
+                    Label("Back", systemImage: "chevron.left")
+                        .padding(.bottom)
+                    
+                }
+                Spacer()
+            }
             Text("Quiz")
                 .font(.largeTitle)
                 .bold()
                 .padding(.top)
-
+            Text("Score: \(model.score)/\(model.shuffledQuestions.count)")
+                .font(.footnote)
+                .padding(.bottom)
             Spacer()
-
             VStack(alignment: .leading, spacing: 16) {
-                Text(questions[currentQuestionIndex].text)
+                Text(model.shuffledQuestions[model.currentQuestionIndex].text)
                     .font(.title2)
                     .bold()
                     .padding()
 
-                ForEach(0..<questions[currentQuestionIndex].answers.count, id: \.self) { index in
+                ForEach(0..<model.shuffledQuestions[model.currentQuestionIndex].answers.count, id: \.self) { index in
                     Button(action: {
                         withAnimation(.spring) {
-                            selectedAnswerIndex = index
-                            checkAnswer()
+                            model.selectedAnswerIndex = index
+                            model.checkAnswer()
                         }
                     }) {
                         HStack {
-                            Text(questions[currentQuestionIndex].answers[index])
+                            Text(model.shuffledQuestions[model.currentQuestionIndex].answers[index])
                                 .foregroundColor(.black)
                                 .padding()
 
                             Spacer()
-                            if(showFeedback){
-                                Image(systemName: questions[currentQuestionIndex].correctAnswerIndex == index ? "checkmark" : "xmark")
+                            if(model.showFeedback){
+                                Image(systemName: model.shuffledQuestions[model.currentQuestionIndex].correctAnswerIndex == index ? "checkmark" : "xmark")
                                     .padding()
-                                    .foregroundStyle(questions[currentQuestionIndex].correctAnswerIndex == index ? Color.green : Color.red)
+                                    .foregroundStyle(model.shuffledQuestions[model.currentQuestionIndex].correctAnswerIndex == index ? Color.green : Color.red)
                             }else{
                                 //So as to hav th same padding
                                 Image(systemName: "dot.circle")
@@ -58,7 +68,7 @@ struct QuizView: View {
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity)
                         .background(
-                            selectedAnswerIndex == index ? Color.gray.opacity(0.2) : Color.white
+                            model.selectedAnswerIndex == index ? Color.gray.opacity(0.2) : Color.white
                         )
                         .cornerRadius(12)
                         .overlay(
@@ -66,21 +76,27 @@ struct QuizView: View {
                                 .stroke(Color.black, lineWidth: 1)
                         )
                     }
-                    .disabled(showFeedback)
+                    .disabled(model.showFeedback)
                 }
             }
 
             Spacer()
 
-            if showFeedback {
-                Text(selectedAnswerIndex == questions[currentQuestionIndex].correctAnswerIndex ? "Correct!" : "Incorrect")
+            if model.showFeedback {
+                Text(model.selectedAnswerIndex == model.shuffledQuestions[model.currentQuestionIndex].correctAnswerIndex ? "Correct!" : "Incorrect")
                     .font(.headline)
-                    .foregroundColor(selectedAnswerIndex == questions[currentQuestionIndex].correctAnswerIndex ? .green : .red)
+                    .foregroundColor(model.selectedAnswerIndex == model.shuffledQuestions[model.currentQuestionIndex].correctAnswerIndex ? .green : .red)
                     .padding()
 
-                Button("Next") {
+                Button(model.isEnd ? "End" : "Next") {
                     withAnimation(.linear) {
-                        nextQuestion()
+                        if(model.isEnd){
+                            withAnimation(.linear) {
+                                isActive = nil
+                            }
+                        }else{
+                            model.nextQuestion()
+                        }
                     }
                 }
                 .padding()
@@ -88,33 +104,12 @@ struct QuizView: View {
                 .foregroundColor(.white)
                 .cornerRadius(12)
             }
-
-            Text("Score: \(score)/\(questions.count)")
-                .font(.footnote)
-                .padding(.bottom)
         }
         .padding()
-    }
-
-    private func checkAnswer() {
-        if selectedAnswerIndex == questions[currentQuestionIndex].correctAnswerIndex {
-            score += 1
-        }
-        showFeedback = true
-    }
-
-    private func nextQuestion() {
-        if currentQuestionIndex < questions.count - 1 {
-            currentQuestionIndex += 1
-            selectedAnswerIndex = nil
-            showFeedback = false
-        } else {
-            // Quiz finished
-        }
     }
 }
 
 #Preview {
-    QuizView(isActive: .constant(PracticePage(type: .history)))
+    QuizView(isActive: .constant(PracticePage(type: .history)), show: .constant(true))
         .fontDesign(.monospaced)
 }

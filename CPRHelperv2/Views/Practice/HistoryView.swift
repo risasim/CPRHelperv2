@@ -8,6 +8,8 @@ import SwiftUI
 
 ///View depicting the CPR history, simple stylized text with images
 struct HistoryView:View {
+    @State var showQuiz = false
+    @Binding var isActive:PracticePage?
     var body: some View {
         VStack{
             HStack{
@@ -31,7 +33,7 @@ struct HistoryView:View {
             }
             .padding(.top,0)
             Button {
-                //
+                showQuiz = true
             } label: {
                 Text("Take quiz")
                     .padding()
@@ -43,6 +45,10 @@ struct HistoryView:View {
             }
 
         }
+        .navigationDestination(isPresented: $showQuiz, destination: {
+            QuizView(isActive: $isActive, show: $showQuiz)
+                .navigationBarBackButtonHidden()
+        })
         .padding(.horizontal)
     }
 }
@@ -77,6 +83,6 @@ Today, CPR is a fundamental skill taught worldwide, emphasizing the importance o
 
 #Preview {
     NavigationStack{
-        HistoryView()
+        HistoryView(isActive: .constant(PracticePage(type:PracticeOptions.history)))
     }
 }

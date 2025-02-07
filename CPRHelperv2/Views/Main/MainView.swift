@@ -64,46 +64,48 @@ struct MainView: View {
             })
             .if(practiceDetailType != nil, transform: { view in
                 view.fullScreenCover(isPresented: $practiceDetailActive) {
-                    VStack{
-                        HStack{
-                            Button {
-                                withAnimation {
-                                    practiceDetailActive = false
-                                }
-                            } label: {
-                                Label("Back", systemImage: "chevron.left")
-                                    .padding(.leading)
-                                    .padding(.bottom)
-                                    
-                            }
-                            Spacer()
-                        }
-                        AnyView(practiceDetailType!.type.destination($practiceDetailType))
-                    }
-                    //TODO Add negation so it displays on the first opening
-                    .if(practiceDetailType!.isComplete) { view in
-                        view
-                            .overlay{
-                                ZStack{
-                                    Color.clear
-                                        .background(
-                                            .ultraThinMaterial,
-                                            in: RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                        )
-                                        .ignoresSafeArea()
-                                    VStack{
-                                        Text((practiceDetailType?.type.explainer())!)
-                                        Button {
-                                            practiceDetailType!.isComplete.toggle()
-                                        } label: {
-                                            Label("Got it!", systemImage: "checkmark")
-                                                .padding()
-                                        }
+                    NavigationStack{
+                        VStack{
+                            HStack{
+                                Button {
+                                    withAnimation {
+                                        practiceDetailActive = false
                                     }
-                                    .padding()
-                                    .multilineTextAlignment(.center)
+                                } label: {
+                                    Label("Back", systemImage: "chevron.left")
+                                        .padding(.leading)
+                                        .padding(.bottom)
+                                    
                                 }
+                                Spacer()
                             }
+                            AnyView(practiceDetailType!.type.destination($practiceDetailType))
+                        }
+                        //TODO Add negation so it displays on the first opening
+                        .if(practiceDetailType!.isComplete) { view in
+                            view
+                                .overlay{
+                                    ZStack{
+                                        Color.clear
+                                            .background(
+                                                .ultraThinMaterial,
+                                                in: RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                            )
+                                            .ignoresSafeArea()
+                                        VStack{
+                                            Text((practiceDetailType?.type.explainer())!)
+                                            Button {
+                                                practiceDetailType!.isComplete.toggle()
+                                            } label: {
+                                                Label("Got it!", systemImage: "checkmark")
+                                                    .padding()
+                                            }
+                                        }
+                                        .padding()
+                                        .multilineTextAlignment(.center)
+                                    }
+                                }
+                        }
                     }
                 }
             })
