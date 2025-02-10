@@ -47,7 +47,6 @@ struct AnimatedAppLabel: View {
             }
         }
         .onChange(of: scenePhase) {
-            print(scenePhase)
             if scenePhase == .inactive {
                 performAnimation = false
             } else if scenePhase == .active {

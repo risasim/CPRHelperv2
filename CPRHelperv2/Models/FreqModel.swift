@@ -141,7 +141,6 @@ class FreqModel:ObservableObject{
             for i in 0..<Int(self.secs)-1{
                 sum+=avgsPerSeconds[i].1
             }
-            print(Int(Double(sum)/Double(Int(self.secs-1.0))))
             averageSoFar = Int(Double(sum)/Double(Int(self.secs-1.0)))
         }else{
             averageSoFar = 0

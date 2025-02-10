@@ -70,7 +70,6 @@ struct PlaceChestView: View {
     private func checkTappedLocation(_ point: CGPoint, in size: CGSize) -> Bool {
         let relativeX = point.x / size.width
         let relativeY = point.y / size.height
-        print("\(relativeX)  \(relativeY)")
         return correctArea.contains(CGPoint(x: relativeX, y: relativeY))
     }
 }
