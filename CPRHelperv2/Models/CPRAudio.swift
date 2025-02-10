@@ -14,20 +14,27 @@ import SwiftUI
 class CPRAudioModel {
     private var audioPlayer: AVAudioPlayer?
     private var countingTimer: Timer?
+    //Numbers of beep that sounded from the start of the sessoin.
     private var beepCount: Int = 0
+    //If there is currently break in the compressions for the breaths
     private var isBreathing: Bool = false
+    ///Image in the ``PulsingView```
     var image = "uncompressed"
+    ///Whether sound should be played
     var soundOn: Bool = true {
         didSet {
             updateAudioState()
         }
     }
+    ///Whether the CPR is performed with breaths
     var withBreaths: Bool = false {
         didSet {
             restartCounting()
         }
     }
+    ///Status of the currenct situation
     var status: String = "Resuscitate"
+    ///If the model is active
     var isActive: Bool = false {
         didSet {
             if isActive {
@@ -54,6 +61,7 @@ class CPRAudioModel {
         volume?.value = 1
     }
     
+    //Prepares before playng the sounds
     private func setupAudioSession() {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.defaultToSpeaker, .mixWithOthers])
@@ -68,6 +76,7 @@ class CPRAudioModel {
         }
     }
     
+    //Prepares the players for playing the beeps
     private func setupAudioPlayer() {
         guard let soundURL = Bundle.main.url(forResource: "beep", withExtension: "wav") else {
             print("Beep sound file not found")
@@ -82,6 +91,7 @@ class CPRAudioModel {
         }
     }
     
+    //Handles interruptions of the audio playing
     @objc private func handleInterruption(notification: Notification) {
         guard let userInfo = notification.userInfo,
               let typeValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
@@ -105,10 +115,12 @@ class CPRAudioModel {
         }
     }
     
+    ///Toggles if the audio should be played.
     func toggleActive() {
         isActive.toggle()
     }
     
+    //Starts the counter and ideally the audio session
     private func startCounting() {
         stopCounting()
         do {
@@ -119,6 +131,7 @@ class CPRAudioModel {
         restartCounting()
     }
     
+    //Restarts the whole thing
     private func restartCounting() {
         stopCounting()
         beepCount = 0
@@ -135,6 +148,7 @@ class CPRAudioModel {
         }
     }
     
+    //When you play without breaths
     private func countContinuous() {
         if soundOn {
             playBeep()
@@ -145,6 +159,7 @@ class CPRAudioModel {
         updateStatus()
     }
     
+    //When with breaths, having pauses
     private func countWithBreaths() {
         if self.isBreathing {
             self.image = "breathe"
@@ -170,16 +185,17 @@ class CPRAudioModel {
         updateStatus()
     }
     
+    //Upadtes the status on the View showing what to do
     private func updateStatus() {
         if withBreaths {
             self.status = isBreathing ? "Do two breaths" : "Resuscitate \(30-beepCount)"
         } else {
-            self.status = "Resuscitate (\(beepCount))"
+            self.status = "Resuscitate \(beepCount)"
         }
     }
     
+    //Plays the on beep
     private func playBeep() {
-        debugPrint("wtf")
         audioPlayer?.currentTime = 0
         audioPlayer?.play()
         self.image = "compressed"
@@ -190,6 +206,7 @@ class CPRAudioModel {
         }
     }
     
+    //When no beep should be played but we need the same logic
     private func fakePlayBeep() {
         self.image = "compressed"
         
@@ -198,6 +215,7 @@ class CPRAudioModel {
         }
     }
     
+    //Stops the counter
     private func stopCounting() {
         audioPlayer?.stop()
         countingTimer?.invalidate()
@@ -207,6 +225,7 @@ class CPRAudioModel {
         updateStatus()
     }
     
+    //Updates the audio state, can start or end the audio
     private func updateAudioState() {
         if isActive {
             if soundOn {

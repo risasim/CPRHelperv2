@@ -65,7 +65,7 @@ struct MainLabelStyle: LabelStyle {
     }
 }
 
-
+///Toggles in the puslig view
 struct PulsingToggleStyle: ToggleStyle {
 
     var systemImageActive: String = "checkmark"
@@ -104,6 +104,7 @@ struct PulsingToggleStyle: ToggleStyle {
     }
 }
 
+///Background for the content that should stand out a little bit
 struct BorderedBackgroundModifier: ViewModifier {
     func body(content: Content) -> some View {
         content

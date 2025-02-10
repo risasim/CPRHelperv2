@@ -24,6 +24,7 @@ class QuizModel{
         self.selectedAnswerIndex = selectedAnswerIndex
     }
     
+    ///Checks if answer is correct and whether it should give points
     func checkAnswer() {
         if selectedAnswerIndex == shuffledQuestions[currentQuestionIndex].correctAnswerIndex {
             score += 1
@@ -31,6 +32,7 @@ class QuizModel{
         showFeedback = true
     }
 
+    //Gives the next question
     func nextQuestion() {
         if currentQuestionIndex < questions.count - 1 {
             currentQuestionIndex += 1
@@ -39,8 +41,6 @@ class QuizModel{
             if(currentQuestionIndex == questions.count - 1){
                 isEnd = true
             }
-        } else {
-            // Quiz finished
         }
     }
 }

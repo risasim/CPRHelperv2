@@ -12,6 +12,7 @@ import SwiftUI
 enum PracticeOptions:Codable {
     case history,how,positionTrain,rhytmTrain
     
+    ///Title shown in the ``PracticeTimelineView```
     func title() -> String {
         switch self {
         case .history: return "History"
@@ -21,6 +22,7 @@ enum PracticeOptions:Codable {
         }
     }
     
+    ///The destination in ``PracticeTimelineView`` that lead to the views that are concerned about that
     func destination(_ isActive:Binding<PracticePage?>) ->any View {
         switch self {
         case .history: return HistoryView(isActive: isActive)
@@ -30,6 +32,7 @@ enum PracticeOptions:Codable {
         }
     }
     
+    ///Icon fo the option
     func icon()->String{
         switch self {
         case .history: return "book.circle"
@@ -39,6 +42,7 @@ enum PracticeOptions:Codable {
         }
     }
     
+    ///Explainer to show when opening that option for the first time
     func explainer()->String{
         switch self{
         case .history: return "In this practice you will learn about the history of CPR and with quick quiz, you will test how much attention have you paid to this text."
@@ -81,6 +85,7 @@ struct PracticePagesHandler{
         }
     }
     
+    ///Saves tthe pages to defaults
     func saveToDefaults() {
         let defaults = UserDefaults.standard
         do {
@@ -92,10 +97,12 @@ struct PracticePagesHandler{
         }
     }
     
+    ///If the option is last
     func isLast(id:UUID) -> Bool{
         return pages.pages.last!.id==id
     }
     
+    ///Loads the data from defaults
     static func loadFromDefaults() -> PracticePages{
         let defaults = UserDefaults.standard
         if let data = defaults.data(forKey: OPTIONS_KEY) {

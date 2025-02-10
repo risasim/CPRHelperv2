@@ -75,7 +75,7 @@ class FreqModel:ObservableObject{
             self.startDemo()
         }
     }
-    ///Evaluates the data, by taking the number of push happened on the
+    //Evaluates the data, by taking the number of push happened on the
     private func evalData(){
         var res:[(Int, Int)]=[]
         var counter = 0
@@ -104,14 +104,14 @@ class FreqModel:ObservableObject{
         avgsPerSeconds = res
         getAverageSoFar()
     }
-    ///Recalculates all of the variables that are associated witht the push
+    //Recalculates all of the variables that are associated witht the push
     private func recalculate(){
         self.lastTimeDiff = timeStamps[timeStamps.count-1] - timeStamps[timeStamps.count-2]
         self.lastFreq = Int(pow(lastTimeDiff/60, -1))
         self.dateWithFreqs.append((timeStamps[timeStamps.count-1],lastFreq))
         evalData()
     }
-    ///Set the status based on the values of the averagesPerSecs
+    //Set the status based on the values of the averagesPerSecs
     private func status(){
         if(secs>3){
             avgOfLastTwo = (avgsPerSeconds[Int(secs)-1].1+avgsPerSeconds[Int(secs)-2].1)/2
@@ -124,7 +124,7 @@ class FreqModel:ObservableObject{
             }
         }
     }
-    ///Checks if simulation ended, time based on the interval
+    //Checks if simulation ended, time based on the interval
     private func checkEnd(_ timer: Timer){
         if (self.secs >= interval) {
             timer.invalidate()
@@ -134,7 +134,7 @@ class FreqModel:ObservableObject{
             self.showResults = true
         }
     }
-    ///Do average from the seconds that passed
+    //Do average from the seconds that passed
     private func getAverageSoFar(){
         if(Int(secs) >= 2){
             var sum = 0
@@ -147,7 +147,7 @@ class FreqModel:ObservableObject{
             averageSoFar = 0
         }
     }
-    ///Reset all of the variables
+    //Reset all of the variables
     private func resetVars(){
         timer = nil
         timeStamps = []
@@ -175,6 +175,7 @@ extension Date {
 
 }
 
+///Status showing what should the user do
 enum StatusSpeed:String{
     case faster,right,slower,start
 }

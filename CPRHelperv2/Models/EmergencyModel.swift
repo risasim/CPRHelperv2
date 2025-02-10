@@ -32,6 +32,7 @@ final class EmergencyModel {
         self.openURL = openURL
     }
     
+    ///Starts the timer to show how long is the cpr performed for.
     func startTimer() {
         if let timer = stopwatchTimer {
             timer.invalidate()
@@ -48,6 +49,7 @@ final class EmergencyModel {
         }
     }
     
+    ///Tries to call emergency number
     func callNumber() {
         let emergencyNumber = UserDefaults.standard.string(forKey: "emergencyNumber") ?? "911"
         DispatchQueue.main.async {
