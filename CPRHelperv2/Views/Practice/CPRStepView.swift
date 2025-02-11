@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///View for one step of the CPR for ``CPRTimelineView``
 struct CPRStepView: View {
     @State var index: Int
     @Binding var item: CPRStep
@@ -37,8 +38,6 @@ struct CPRStepView: View {
 }
 
 #Preview {
-//    CPRStepView(index: 6, item: .constant(CPRStep(name: "Rescue Breaths (if trained)", correctOrder: 6)))
-//        .padding()
-    CPRTimelineView()
+    CPRTimelineView(activeView: .constant(PracticePage.init(type: PracticeOptions.history)))
         .fontDesign(.monospaced)
 }

@@ -11,6 +11,7 @@ struct HowToCPR: View {
     
     @State private var audio = CPRAudioModel(startSound: false)
     @State private var showPractice = false
+    @Binding var activeView:PracticePage?
     
     var body: some View {
         VStack{
@@ -60,7 +61,7 @@ struct HowToCPR: View {
             }
         }
         .navigationDestination(isPresented: $showPractice, destination: {
-            CPRTimelineView()
+            CPRTimelineView(activeView: $activeView)
         })
         .padding(.horizontal)
         .onAppear{
@@ -102,7 +103,7 @@ struct HowToCPR: View {
 
 #Preview {
     NavigationStack{
-        HowToCPR()
+        HowToCPR(activeView: .constant(PracticePage.init(type: PracticeOptions.history)))
             .fontDesign(.monospaced)
     }
 }

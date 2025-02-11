@@ -26,7 +26,7 @@ enum PracticeOptions:Codable {
     func destination(_ isActive:Binding<PracticePage?>) ->any View {
         switch self {
         case .history: return HistoryView(isActive: isActive)
-        case .how: return HowToCPR()
+        case .how: return HowToCPR(activeView: isActive)
         case .positionTrain: return PlaceChestTraining(isActive: isActive)
         case .rhytmTrain: return FrequencyView()
         }

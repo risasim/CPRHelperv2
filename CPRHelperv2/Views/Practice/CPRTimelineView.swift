@@ -13,6 +13,7 @@ struct CPRTimelineView: View {
     @State private var draggedItem: CPRStep?
     @State private var showFeedback = false
     @State private var isCorrect = false
+    @Binding var activeView:PracticePage?
     
     var body: some View {
         VStack(spacing: 10) {
@@ -42,7 +43,7 @@ struct CPRTimelineView: View {
                         title: Text("Correct!"),
                         message: Text("You've identified the correct area for CPR."),
                         primaryButton: .default(Text("Go back")){
-                            //activeView = nil
+                            activeView = nil
                         },
                         secondaryButton: .default(Text("Try Again")) {
                             timelineModel.reset()
@@ -75,6 +76,6 @@ struct CPRTimelineView: View {
 }
 
 #Preview {
-    CPRTimelineView()
+    CPRTimelineView(activeView: .constant(PracticePage.init(type: PracticeOptions.history)))
         .fontDesign(.monospaced)
 }
