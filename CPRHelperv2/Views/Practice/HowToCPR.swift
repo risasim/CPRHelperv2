@@ -10,6 +10,7 @@ import SwiftUI
 struct HowToCPR: View {
     
     @State private var audio = CPRAudioModel(startSound: false)
+    @State private var showPractice = false
     
     var body: some View {
         VStack{
@@ -17,7 +18,7 @@ struct HowToCPR: View {
                 .font(.title)
                 .bold()
                 .multilineTextAlignment(.center)
-                .padding(.bottom)
+                .padding(.bottom,5)
             ScrollView{
                 //TODO add picture of clearing airways
                 Text(cprGuidePart1)
@@ -50,8 +51,17 @@ struct HowToCPR: View {
                 .borderedBackground()
                 Text(cprGuidePart2)
             }
-            .scrollIndicators(.hidden)
+            Button {
+                showPractice.toggle()
+            } label: {
+                Text("Practice")
+                    .padding()
+                    .borderedBackground()
+            }
         }
+        .navigationDestination(isPresented: $showPractice, destination: {
+            CPRTimelineView()
+        })
         .padding(.horizontal)
         .onAppear{
             audio.isActive = true
@@ -91,6 +101,8 @@ struct HowToCPR: View {
 
 
 #Preview {
-    HowToCPR()
-        .fontDesign(.monospaced)
+    NavigationStack{
+        HowToCPR()
+            .fontDesign(.monospaced)
+    }
 }

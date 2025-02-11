@@ -76,4 +76,5 @@ struct CPRTimelineView: View {
 
 #Preview {
     CPRTimelineView()
+        .fontDesign(.monospaced)
 }

@@ -14,12 +14,13 @@ struct CPRStepView: View {
     var body: some View {
         HStack {
             Text(item.name)
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
+                .font(.title3)
             Spacer()
         }
+        .fontDesign(.monospaced)
         .foregroundStyle(Color.white)
-        .font(Font.title)
-        .lineLimit(1)
-        .minimumScaleFactor(0.001)
         .padding()
         .background(
             ZStack{
@@ -36,5 +37,8 @@ struct CPRStepView: View {
 }
 
 #Preview {
-    CPRStepView(index: 6, item: .constant(CPRStep(name: "Hello", correctOrder: 6)))
+//    CPRStepView(index: 6, item: .constant(CPRStep(name: "Rescue Breaths (if trained)", correctOrder: 6)))
+//        .padding()
+    CPRTimelineView()
+        .fontDesign(.monospaced)
 }
