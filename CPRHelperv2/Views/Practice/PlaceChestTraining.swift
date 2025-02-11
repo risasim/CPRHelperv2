@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///View to train the placement of the hands for performing CPR
 struct PlaceChestTraining: View {
     
     @Binding var isActive:PracticePage?
