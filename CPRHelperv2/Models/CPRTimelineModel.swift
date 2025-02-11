@@ -22,13 +22,12 @@ class CPRTimelineModel{
     private static let items: [CPRStep] = [
         CPRStep(name: "Check the Scene", correctOrder: 0),
         CPRStep(name: "Check Responsiveness", correctOrder: 1),
-        CPRStep(name: "Call for Help", correctOrder: 2),
+        CPRStep(name: "Call Ambulance", correctOrder: 2),
         CPRStep(name: "Check for Breathing", correctOrder: 3),
         CPRStep(name: "Open the Airway", correctOrder: 4),
         CPRStep(name: "Give Chest Compressions", correctOrder: 5),
         CPRStep(name: "Rescue Breaths (if trained)", correctOrder: 6),
         CPRStep(name: "Use an AED (if available)", correctOrder: 7),
-        CPRStep(name: "Continue CPR", correctOrder: 8)
     ]
     
     var viewSteps: [CPRStep]
@@ -45,6 +44,9 @@ class CPRTimelineModel{
     ///Checks the order of the steps
     func checkOrder() -> Bool{
         for i in 0..<viewSteps.count{
+            if((viewSteps[i].correctOrder == 6 || viewSteps[i].correctOrder == 7) && (i==6 || i==7)){
+                continue
+            }
             if(viewSteps[i].correctOrder != i){
                 return false
             }
