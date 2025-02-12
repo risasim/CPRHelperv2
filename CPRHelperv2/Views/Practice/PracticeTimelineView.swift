@@ -20,10 +20,11 @@ struct PracticeTimelineView: View {
         VStack(spacing:0) {
             if(!onboarding){
                 HStack{
-                    Text("Here are some practice blocks for you to learn")
+                    Text("Here are some practice blocks for you to learn from")
+                        .minimumScaleFactor(0.0001)
                         .padding()
                         .bold()
-                        .minimumScaleFactor(0.0001)
+                    Spacer()
                     VStack{
                         Button {
                             active.toggle()
@@ -31,10 +32,9 @@ struct PracticeTimelineView: View {
                             Image(systemName: "xmark")
                                 .bold()
                                 .font(.title)
-                                .padding(10)
+                                .padding(.trailing)
                         }
                         .buttonStyle(.plain)
-                        Spacer()
                     }
                 }
             }
@@ -85,6 +85,12 @@ struct PracticeTimelineView: View {
 
 #Preview {
     NavigationStack{
-        PracticeTimelineView(active: .constant(true), practiceDetailActive: .constant(false), practiceDetailType: .constant(PracticePage(type: PracticeOptions.history)))
+        VStack{
+            Text("Here is to the crazy ones")
+        }
+        .sheet(isPresented: .constant(true)) {
+            PracticeTimelineView(active: .constant(true), practiceDetailActive: .constant(false), practiceDetailType: .constant(PracticePage(type: PracticeOptions.history)))
+                .presentationDetents([.medium])
+        }
     }
 }

@@ -5,8 +5,6 @@
 //  Created by Richard Šimoník on 11.01.2025.
 //
 import SwiftUI
-import AVKit
-import MediaPlayer
 
 ///Main view for emergency, showing all of the stuff 
 struct EmergencyView: View {
@@ -48,22 +46,3 @@ struct EmergencyView: View {
         EmergencyView(model: .constant(EmergencyModel()))
     }
 }
-
-
-func increaseVolume() {
-    do {
-        try AVAudioSession.sharedInstance().setActive(true)
-        let currentVolume = AVAudioSession.sharedInstance().outputVolume
-        
-        // This will show the system volume HUD
-        let volumeView = MPVolumeView()
-        if let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                slider.value = 0.5
-            }
-        }
-    } catch {
-        print("Error setting audio session: \(error)")
-    }
-}
-

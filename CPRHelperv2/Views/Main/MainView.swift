@@ -81,7 +81,6 @@ struct MainView: View {
                             }
                             AnyView(practiceDetailType!.type.destination($practiceDetailType))
                         }
-                        //TODO Add negation so it displays on the first opening - now set
                         .if(!practiceDetailType!.isComplete) { view in
                             view
                                 .overlay{
@@ -107,6 +106,7 @@ struct MainView: View {
                                 }
                         }
                     }
+                    .accentColor(.primary)
                 }
             })
         }

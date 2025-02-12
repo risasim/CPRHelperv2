@@ -12,7 +12,7 @@ struct OnBoardingsView: View {
         ZStack{
             Color.clear
                 .background(
-                .ultraThinMaterial,
+                .thinMaterial,
                 in: RoundedRectangle(cornerRadius: 8, style: .continuous)
             )
             .ignoresSafeArea()

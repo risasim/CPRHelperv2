@@ -22,7 +22,7 @@ struct InfoView: View {
                         .bold()
                         .font(.title)
                         .fontDesign(.monospaced)
-                        .padding([.top,.trailing])
+                        .padding(.top)
                 })
             }
             GroupBox {
