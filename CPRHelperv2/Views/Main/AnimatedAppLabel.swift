@@ -49,12 +49,12 @@ struct AnimatedAppLabel: View {
                 runAnimation()
             }
         }
-        .onChange(of: scenePhase) { newPhase in
+        .onChange(of: scenePhase) { oldPhase, newPhase in
             if newPhase == .active {
                 performAnimation = true  // Ensure animation can run when app becomes active
             }
         }
-        .onChange(of: performAnimation) { newValue in
+        .onChange(of: performAnimation) {oldPhase, newValue in
             if newValue {
                 resetAnimation()
                 runAnimation()
