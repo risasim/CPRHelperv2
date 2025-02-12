@@ -6,20 +6,20 @@
 //
 import SwiftUI
 
-///View to show the animted title on every intro in the app
+/// View to show the animated title on every intro in the app
 struct AnimatedAppLabel: View {
     let appName: String
     @State private var crossOffset: CGFloat = 0
     @State private var textRevealWidth: CGFloat = 0
-    
-    //So it doesnt animate every time
+
+    // Prevents animation from running every time
     @Environment(\.scenePhase) var scenePhase
-    @AppStorage("performAnimation") var performAnimation:Bool = true
-    
+    @AppStorage("performAnimation") var performAnimation: Bool = true
+
     private var textWidth: CGFloat {
         CGFloat(appName.count * 16)
     }
-    
+
     var body: some View {
         ZStack(alignment: .center) {
             Text(appName)
@@ -33,39 +33,43 @@ struct AnimatedAppLabel: View {
                             .offset(x: geometry.size.width - textRevealWidth)
                     }
                 )
-                .offset(x: 0) // Offset text to make room for the icon
+                // Offset text to make room for the icon
+                .offset(x: 0)
+            
             RoundedEdgeCrossShape()
                 .offset(x: crossOffset)
                 .foregroundColor(.red)
-                .padding(.top,3)
+                .padding(.top, 3)
         }
         .frame(width: textWidth + 15, height: 0, alignment: .center)
         .padding(.leading, 27)
         .onAppear {
-            if(performAnimation){
+            if performAnimation {
+                resetAnimation()
                 runAnimation()
             }
         }
-        .onChange(of: scenePhase) {
-            if scenePhase == .inactive {
-                performAnimation = false
-            } else if scenePhase == .active {
-                performAnimation = false
-            } else if scenePhase == .background {
-                performAnimation = true
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                performAnimation = true  // Ensure animation can run when app becomes active
             }
         }
-        .onChange(of: performAnimation) {
-            if performAnimation{
+        .onChange(of: performAnimation) { newValue in
+            if newValue {
+                resetAnimation()
                 runAnimation()
             }
         }
     }
-    ///Create the swipe animtaion to reveal the name
-    func runAnimation(){
-        // Start cross at the center
+
+    /// Resets animation state to ensure a fresh start
+    private func resetAnimation() {
+        textRevealWidth = 0
         crossOffset = (textWidth + 30) / 2
-        
+    }
+
+    /// Runs the swipe animation to reveal the name
+    private func runAnimation() {
         withAnimation(.easeInOut(duration: 0.5)) {
             crossOffset = textWidth + 20 // Move cross to the end
         }
