@@ -100,8 +100,8 @@ struct QuizView: View {
                     }
                 }
                 .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
+                .buttonStyle(.plain)
+                .borderedBackground()
                 .cornerRadius(12)
             }
         }
