@@ -37,11 +37,11 @@ let phoneNumbers:[String] = [
 
 //OnBoarding
 let onboarding1:LocalizedStringResource = """
-Welcome to CPR Helper. My name is Richard and I have created this app to educate users on how to perform CPR and in case of an unfortune event even possible help them. The app consists of two main elements:
+Welcome to CPR Helper. My name is Richard, and I created this app to educate users on how to perform CPR and, in case of an unfortunate event, possibly even help them. The app consists of two main elements:
 """
 
 let onboarding2 = """
-The emergency view that will help you in case of emergency
+This view will assist you in case of an emergency.
 """
 
 let onboarding3 = """
@@ -63,7 +63,6 @@ The first organized effort to respond to sudden death emerged in 1767 with the f
 
 In 1775, Danish physician Peter Christian Abildgaard conducted experiments demonstrating that electrical shocks could revive lifeless animals, laying the groundwork for modern defibrillation techniques. Later, in 1792, English physician James Curry noted the distinction between absolute death and apparent death, emphasizing that the latter could be reversed through appropriate interventions, including external defibrillation.
 [Wikipedia](https://en.wikipedia.org/wiki/History_of_cardiopulmonary_resuscitation#Electrical_shocks)
-
 """
 
 let history2:LocalizedStringKey = """
@@ -91,11 +90,11 @@ let cprGuidePart1:LocalizedStringResource = """
 let  cprGuideAirways:LocalizedStringResource = """
 **5. Open the Airway** – Tilt the head back and lift the chin to prevent the tongue from blocking the airway.
 """
-let checklistExplain = "Until now you can find the steps in Checklist that is found in the Emergency part of this app. Check indicates if that thing should be found or not. The Checklist is interactive."
+let checklistExplain = "So far, you can find these steps in the Checklist located in the Emergency section of this app. A check indicates whether something should be present or not. The Checklist is interactive."
 let cprGuidePart3:LocalizedStringResource = """
 **6. Give Chest Compressions** –
     - Place both hands in the center of the chest.
-    - Push hard and fast (*5-6 cm deep* do not be afraid to push even when you hear some ribs breaking, at a rate of *100-120 compressions per minute*).
+    - Push hard and fast (*5-6 cm deep*). Do not be afraid to push, even if you hear some ribs breaking, at a rate of *100-120 compressions per minute*.
     - Allow the chest to fully recoil between compressions.
 
 **7. Rescue Breaths (if trained)** 
