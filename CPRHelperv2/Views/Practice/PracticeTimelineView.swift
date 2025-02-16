@@ -21,7 +21,8 @@ struct PracticeTimelineView: View {
             if(!onboarding){
                 HStack{
                     Text("Here are some practice blocks for you to learn from")
-                        .minimumScaleFactor(0.0001)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.1)
                         .padding()
                         .bold()
                     Spacer()

@@ -12,6 +12,7 @@ struct QuizView: View {
     @Binding var isActive:PracticePage?
     @State var model = QuizModel()
     @Binding var show:Bool
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
@@ -68,7 +69,7 @@ struct QuizView: View {
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity)
                         .background(
-                            model.selectedAnswerIndex == index ? Color.gray.opacity(0.2) : Color.white
+                            model.selectedAnswerIndex == index ? (colorScheme == .dark ? Color.gray.opacity(0.95):Color.gray.opacity(0.2)) : Color.white
                         )
                         .cornerRadius(12)
                         .overlay(
@@ -102,7 +103,6 @@ struct QuizView: View {
                 .padding()
                 .buttonStyle(.plain)
                 .borderedBackground()
-                .cornerRadius(12)
             }
         }
         .padding()

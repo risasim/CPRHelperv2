@@ -16,7 +16,7 @@ struct OnBoarding2View: View {
                 .font(.title2)
                 .padding(.horizontal)
                 .multilineTextAlignment(.leading)
-            EmergencyView(model: $model)
+            EmergencyView(model: $model,isOnBoarding: true)
                 .minimumScaleFactor(0.001)
                 .frame(maxWidth: 360)
                 .padding()

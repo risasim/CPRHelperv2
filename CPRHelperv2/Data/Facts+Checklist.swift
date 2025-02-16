@@ -41,7 +41,7 @@ Welcome to CPR Helper. My name is Richard and I have created this app to educate
 """
 
 let onboarding2 = """
-The emergency view that will help you in case of neeed of CPR:
+The emergency view that will help you in case of emergency
 """
 
 let onboarding3 = """

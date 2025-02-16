@@ -10,6 +10,7 @@ import SwiftUI
 struct EmergencyView: View {
     
     @Binding var model:EmergencyModel
+    var isOnBoarding = false
     
     var body: some View {
         VStack{
@@ -30,7 +31,9 @@ struct EmergencyView: View {
                 .padding(.horizontal,20)
         }
         .onAppear(perform: {
-            increaseVolume()
+            if(!isOnBoarding){
+                increaseVolume()
+            }
         })
         .toolbar(content: {
             ToolbarItem(placement: .principal) {
