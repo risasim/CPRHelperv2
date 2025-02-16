@@ -87,7 +87,8 @@ let cprGuidePart1:LocalizedStringResource = """
 **3. Call for Help** – Dial emergency services (e.g., **112** in Europe, **911** in the U.S., you can set the default emergency number in the settings). If others are around, ask someone to get an **AED** (Automated External Defibrillator).  
 
 **4. Check for Breathing** – Look, listen, and feel for normal breathing for no more than **10 seconds**. If the person is not breathing or only gasping, start CPR.  
-
+"""
+let  cprGuideAirways:LocalizedStringResource = """
 **5. Open the Airway** – Tilt the head back and lift the chin to prevent the tongue from blocking the airway.
 """
 let checklistExplain = "Until now you can find the steps in Checklist that is found in the Emergency part of this app. Check indicates if that thing should be found or not. The Checklist is interactive."
