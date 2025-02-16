@@ -43,19 +43,20 @@ struct FrequencyView: View {
                 Button {
                     model.push()
                 } label: {
-                    Text(model.started ?"Resuscitate" :"Start")
+                    Text(model.started ? "Resuscitate" : "Start")
                         .font(.title)
-                        .padding(.horizontal)
+                        .padding()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+                .clipShape(RoundedRectangle(cornerRadius: 90))
                 .overlay(
                     RoundedRectangle(cornerRadius: 90)
-                        .stroke(style: StrokeStyle(lineWidth: 3))
+                        .stroke(lineWidth: 3)
                 )
                 .disabled(disabled)
                 .buttonStyle(.bordered)
-                    .tint(model.started ? Color.red: Color.blue)
-                    .accessibilityIdentifier("PushResusctiateButton")
+                .tint(model.started ? Color.red : Color.blue)
+                .accessibilityIdentifier("PushResuscitateButton")
                 
             }
             .padding()
