@@ -65,7 +65,7 @@ In 1775, Danish physician Peter Christian Abildgaard conducted experiments demon
 [Wikipedia](https://en.wikipedia.org/wiki/History_of_cardiopulmonary_resuscitation#Electrical_shocks)
 """
 
-let history2:LocalizedStringKey = """
+let history2:LocalizedStringResource = """
 **Modern CPR Development**
 
 The 20th century witnessed significant advancements in CPR. In the 1950s, the combination of chest compressions and rescue breaths became standardized, forming the basis of modern CPR. The American Heart Association (AHA) played a pivotal role by developing science-based CPR guidelines and leading in first aid, CPR, and AED training. 
