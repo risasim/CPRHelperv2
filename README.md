@@ -16,9 +16,7 @@ CPR Helper is an educational and emergency support app developed in Swift using 
 - **Accessibility:** Designed to be intuitive, even for users in high-stress situations.
 
 ## Sreenshots
-![App Screenshot](images/res.png)
-![App Screenshot](images/push.png)
-![App Screenshot](images/resc.png)
+![App Screenshot](images/res.png) ![App Screenshot](images/push.png) ![App Screenshot](images/resc.png)
 
 ## Technologies Used
 - **Swift**: Core programming language
