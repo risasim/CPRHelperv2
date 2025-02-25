@@ -30,7 +30,7 @@ struct GraphView:View{
             .chartXScale(domain: 0...data.count)
             .chartForegroundStyleScale(["Frequency": Color.blue])
             .chartXAxisLabel("Time(sec)")
-            .chartYAxisLabel("Fruequency(push/min)")
+            .chartYAxisLabel("Frequency(push/min)")
         }
     }
 }
