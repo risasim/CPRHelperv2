@@ -19,7 +19,7 @@ struct MainView: View {
     var body: some View {
         NavigationStack{
             VStack(){
-                AnimatedAppLabel(appName: "CPR Helper")
+                AnimatedAppLabel(appName: "CPR:Helper")
                     .padding(.bottom)
                 NavigationLink {
                     EmergencyView(model: $model)
