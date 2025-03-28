@@ -9,7 +9,6 @@ import SwiftUI
 
 ///Onbarding view for the practice.
 struct OnBoarding3View: View {
-    @AppStorage("opened") var opened: Bool = false
     var body: some View {
         VStack{
             Spacer()
@@ -22,15 +21,6 @@ struct OnBoarding3View: View {
                 .padding()
                 .borderedBackground()
                 .padding()
-            Spacer()
-            Button {
-                opened = true
-            } label: {
-                Label("Exit onboarding", systemImage: "xmark")
-                    .padding()
-                    .borderedBackground()
-            }
-            .buttonStyle(.plain)
             Spacer()
         }
     }

@@ -20,6 +20,7 @@ struct OnBoardingsView: View {
                 OnBoarding1View()
                 OnBoarding2View()
                 OnBoarding3View()
+                OnBoardingView4()
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .indexViewStyle(.page(backgroundDisplayMode: .always))
