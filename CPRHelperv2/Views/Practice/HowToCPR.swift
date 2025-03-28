@@ -55,6 +55,7 @@ struct HowToCPR: View {
                 }
                 .borderedBackground()
                 Text(cprGuidePart2)
+                SourceOfInfo()
             }
             Button {
                 showPractice.toggle()

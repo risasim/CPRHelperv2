@@ -51,6 +51,8 @@ struct FreqResultsView: View {
             Text("The ideal frequency should be between 100-120 push/min and with depth of 6cm (one package of TicTac).")
                 .multilineTextAlignment(.center)
                 .font(.footnote)
+            SourceOfInfo()
+                .font(.footnote)
         }
         .multilineTextAlignment(.center)
     }

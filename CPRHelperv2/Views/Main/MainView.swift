@@ -92,6 +92,7 @@ struct MainView: View {
                                             )
                                             .ignoresSafeArea()
                                         VStack{
+                                            Spacer()
                                             Text((practiceDetailType?.type.explainer())!)
                                             Button {
                                                 practiceDetailType!.isComplete.toggle()
@@ -99,6 +100,9 @@ struct MainView: View {
                                                 Label("Got it!", systemImage: "checkmark")
                                                     .padding()
                                             }
+                                            Spacer()
+                                            SourceOfInfo()
+                                                .font(.footnote)
                                         }
                                         .padding()
                                         .multilineTextAlignment(.center)
