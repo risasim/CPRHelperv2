@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A2FBAA92D6C515C008D97A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A2FBAA72D6C5156008D97A5 /* README.md */; };
+		4ABAD8172D9B1BC10014E277 /* CPRHelperWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4ABAD7F42D9B1BC00014E277 /* CPRHelperWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,14 +26,67 @@
 			remoteGlobalIDString = 4AB8021E2D32FAC300FE9E02;
 			remoteInfo = CPRHelperv2;
 		};
+		4ABAD8042D9B1BC10014E277 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AB802172D32FAC300FE9E02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ABAD7F32D9B1BC00014E277;
+			remoteInfo = "CPRHelperWatchApp Watch App";
+		};
+		4ABAD80E2D9B1BC10014E277 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AB802172D32FAC300FE9E02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ABAD7F32D9B1BC00014E277;
+			remoteInfo = "CPRHelperWatchApp Watch App";
+		};
+		4ABAD8152D9B1BC10014E277 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AB802172D32FAC300FE9E02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ABAD7F32D9B1BC00014E277;
+			remoteInfo = "CPRHelperWatchApp Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4ABAD8182D9B1BC10014E277 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4ABAD8172D9B1BC10014E277 /* CPRHelperWatchApp Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4A2FBAA72D6C5156008D97A5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4AB8021F2D32FAC300FE9E02 /* CPRHelperv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPRHelperv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB8022F2D32FAC500FE9E02 /* CPRHelperv2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPRHelperv2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB802392D32FAC500FE9E02 /* CPRHelperv2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPRHelperv2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ABAD7F42D9B1BC00014E277 /* CPRHelperWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CPRHelperWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ABAD8032D9B1BC10014E277 /* CPRHelperWatchApp Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CPRHelperWatchApp Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ABAD80D2D9B1BC10014E277 /* CPRHelperWatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CPRHelperWatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4ABAD8232D9B1C850014E277 /* Exceptions for "CPRHelperv2" folder in "CPRHelperWatchApp Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/CPRAudio.swift,
+				Models/EmergencyModel.swift,
+				Utils/CustomStyles.swift,
+				Utils/Extensions.swift,
+				Views/Main/AnimatedAppLabel.swift,
+				Views/Main/WornOutTextureView.swift,
+			);
+			target = 4ABAD7F32D9B1BC00014E277 /* CPRHelperWatchApp Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4A2FBAAA2D6C523F008D97A5 /* images */ = {
@@ -42,6 +96,9 @@
 		};
 		4AB802212D32FAC300FE9E02 /* CPRHelperv2 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4ABAD8232D9B1C850014E277 /* Exceptions for "CPRHelperv2" folder in "CPRHelperWatchApp Watch App" target */,
+			);
 			path = CPRHelperv2;
 			sourceTree = "<group>";
 		};
@@ -53,6 +110,21 @@
 		4AB8023C2D32FAC500FE9E02 /* CPRHelperv2UITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CPRHelperv2UITests;
+			sourceTree = "<group>";
+		};
+		4ABAD7F52D9B1BC00014E277 /* CPRHelperWatchApp Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "CPRHelperWatchApp Watch App";
+			sourceTree = "<group>";
+		};
+		4ABAD8062D9B1BC10014E277 /* CPRHelperWatchApp Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "CPRHelperWatchApp Watch AppTests";
+			sourceTree = "<group>";
+		};
+		4ABAD8102D9B1BC10014E277 /* CPRHelperWatchApp Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "CPRHelperWatchApp Watch AppUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +151,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4ABAD7F12D9B1BC00014E277 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABAD8002D9B1BC10014E277 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABAD80A2D9B1BC10014E277 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,6 +183,9 @@
 				4AB802212D32FAC300FE9E02 /* CPRHelperv2 */,
 				4AB802322D32FAC500FE9E02 /* CPRHelperv2Tests */,
 				4AB8023C2D32FAC500FE9E02 /* CPRHelperv2UITests */,
+				4ABAD7F52D9B1BC00014E277 /* CPRHelperWatchApp Watch App */,
+				4ABAD8062D9B1BC10014E277 /* CPRHelperWatchApp Watch AppTests */,
+				4ABAD8102D9B1BC10014E277 /* CPRHelperWatchApp Watch AppUITests */,
 				4AB802202D32FAC300FE9E02 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,6 +196,9 @@
 				4AB8021F2D32FAC300FE9E02 /* CPRHelperv2.app */,
 				4AB8022F2D32FAC500FE9E02 /* CPRHelperv2Tests.xctest */,
 				4AB802392D32FAC500FE9E02 /* CPRHelperv2UITests.xctest */,
+				4ABAD7F42D9B1BC00014E277 /* CPRHelperWatchApp Watch App.app */,
+				4ABAD8032D9B1BC10014E277 /* CPRHelperWatchApp Watch AppTests.xctest */,
+				4ABAD80D2D9B1BC10014E277 /* CPRHelperWatchApp Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,10 +213,12 @@
 				4AB8021B2D32FAC300FE9E02 /* Sources */,
 				4AB8021C2D32FAC300FE9E02 /* Frameworks */,
 				4AB8021D2D32FAC300FE9E02 /* Resources */,
+				4ABAD8182D9B1BC10014E277 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4ABAD8162D9B1BC10014E277 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4A2FBAAA2D6C523F008D97A5 /* images */,
@@ -176,6 +277,74 @@
 			productReference = 4AB802392D32FAC500FE9E02 /* CPRHelperv2UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4ABAD7F32D9B1BC00014E277 /* CPRHelperWatchApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ABAD81F2D9B1BC10014E277 /* Build configuration list for PBXNativeTarget "CPRHelperWatchApp Watch App" */;
+			buildPhases = (
+				4ABAD7F02D9B1BC00014E277 /* Sources */,
+				4ABAD7F12D9B1BC00014E277 /* Frameworks */,
+				4ABAD7F22D9B1BC00014E277 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4ABAD7F52D9B1BC00014E277 /* CPRHelperWatchApp Watch App */,
+			);
+			name = "CPRHelperWatchApp Watch App";
+			packageProductDependencies = (
+			);
+			productName = "CPRHelperWatchApp Watch App";
+			productReference = 4ABAD7F42D9B1BC00014E277 /* CPRHelperWatchApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4ABAD8022D9B1BC10014E277 /* CPRHelperWatchApp Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ABAD8202D9B1BC10014E277 /* Build configuration list for PBXNativeTarget "CPRHelperWatchApp Watch AppTests" */;
+			buildPhases = (
+				4ABAD7FF2D9B1BC10014E277 /* Sources */,
+				4ABAD8002D9B1BC10014E277 /* Frameworks */,
+				4ABAD8012D9B1BC10014E277 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ABAD8052D9B1BC10014E277 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4ABAD8062D9B1BC10014E277 /* CPRHelperWatchApp Watch AppTests */,
+			);
+			name = "CPRHelperWatchApp Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "CPRHelperWatchApp Watch AppTests";
+			productReference = 4ABAD8032D9B1BC10014E277 /* CPRHelperWatchApp Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4ABAD80C2D9B1BC10014E277 /* CPRHelperWatchApp Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ABAD8212D9B1BC10014E277 /* Build configuration list for PBXNativeTarget "CPRHelperWatchApp Watch AppUITests" */;
+			buildPhases = (
+				4ABAD8092D9B1BC10014E277 /* Sources */,
+				4ABAD80A2D9B1BC10014E277 /* Frameworks */,
+				4ABAD80B2D9B1BC10014E277 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ABAD80F2D9B1BC10014E277 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4ABAD8102D9B1BC10014E277 /* CPRHelperWatchApp Watch AppUITests */,
+			);
+			name = "CPRHelperWatchApp Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "CPRHelperWatchApp Watch AppUITests";
+			productReference = 4ABAD80D2D9B1BC10014E277 /* CPRHelperWatchApp Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,6 +366,17 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 4AB8021E2D32FAC300FE9E02;
 					};
+					4ABAD7F32D9B1BC00014E277 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					4ABAD8022D9B1BC10014E277 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 4ABAD7F32D9B1BC00014E277;
+					};
+					4ABAD80C2D9B1BC10014E277 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 4ABAD7F32D9B1BC00014E277;
+					};
 				};
 			};
 			buildConfigurationList = 4AB8021A2D32FAC300FE9E02 /* Build configuration list for PBXProject "CPRHelperv2" */;
@@ -216,6 +396,9 @@
 				4AB8021E2D32FAC300FE9E02 /* CPRHelperv2 */,
 				4AB8022E2D32FAC500FE9E02 /* CPRHelperv2Tests */,
 				4AB802382D32FAC500FE9E02 /* CPRHelperv2UITests */,
+				4ABAD7F32D9B1BC00014E277 /* CPRHelperWatchApp Watch App */,
+				4ABAD8022D9B1BC10014E277 /* CPRHelperWatchApp Watch AppTests */,
+				4ABAD80C2D9B1BC10014E277 /* CPRHelperWatchApp Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,6 +420,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4AB802372D32FAC500FE9E02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABAD7F22D9B1BC00014E277 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABAD8012D9B1BC10014E277 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABAD80B2D9B1BC10014E277 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,6 +471,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4ABAD7F02D9B1BC00014E277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABAD7FF2D9B1BC10014E277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABAD8092D9B1BC10014E277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -279,6 +504,21 @@
 			isa = PBXTargetDependency;
 			target = 4AB8021E2D32FAC300FE9E02 /* CPRHelperv2 */;
 			targetProxy = 4AB8023A2D32FAC500FE9E02 /* PBXContainerItemProxy */;
+		};
+		4ABAD8052D9B1BC10014E277 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ABAD7F32D9B1BC00014E277 /* CPRHelperWatchApp Watch App */;
+			targetProxy = 4ABAD8042D9B1BC10014E277 /* PBXContainerItemProxy */;
+		};
+		4ABAD80F2D9B1BC10014E277 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ABAD7F32D9B1BC00014E277 /* CPRHelperWatchApp Watch App */;
+			targetProxy = 4ABAD80E2D9B1BC10014E277 /* PBXContainerItemProxy */;
+		};
+		4ABAD8162D9B1BC10014E277 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ABAD7F32D9B1BC00014E277 /* CPRHelperWatchApp Watch App */;
+			targetProxy = 4ABAD8152D9B1BC10014E277 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -532,6 +772,144 @@
 			};
 			name = Release;
 		};
+		4ABAD8192D9B1BC10014E277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CPRHelperWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 6Q38DY93CU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CPRHelperWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = risasimonik.CPRHelperv2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = risasimonik.CPRHelperv2.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		4ABAD81A2D9B1BC10014E277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CPRHelperWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 6Q38DY93CU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CPRHelperWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = risasimonik.CPRHelperv2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = risasimonik.CPRHelperv2.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		4ABAD81B2D9B1BC10014E277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q38DY93CU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "risasimonik.CPRHelperWatchApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CPRHelperWatchApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CPRHelperWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		4ABAD81C2D9B1BC10014E277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q38DY93CU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "risasimonik.CPRHelperWatchApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CPRHelperWatchApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CPRHelperWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		4ABAD81D2D9B1BC10014E277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q38DY93CU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "risasimonik.CPRHelperWatchApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "CPRHelperWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		4ABAD81E2D9B1BC10014E277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q38DY93CU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "risasimonik.CPRHelperWatchApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "CPRHelperWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -567,6 +945,33 @@
 			buildConfigurations = (
 				4AB8024A2D32FAC500FE9E02 /* Debug */,
 				4AB8024B2D32FAC500FE9E02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ABAD81F2D9B1BC10014E277 /* Build configuration list for PBXNativeTarget "CPRHelperWatchApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ABAD8192D9B1BC10014E277 /* Debug */,
+				4ABAD81A2D9B1BC10014E277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ABAD8202D9B1BC10014E277 /* Build configuration list for PBXNativeTarget "CPRHelperWatchApp Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ABAD81B2D9B1BC10014E277 /* Debug */,
+				4ABAD81C2D9B1BC10014E277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ABAD8212D9B1BC10014E277 /* Build configuration list for PBXNativeTarget "CPRHelperWatchApp Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ABAD81D2D9B1BC10014E277 /* Debug */,
+				4ABAD81E2D9B1BC10014E277 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

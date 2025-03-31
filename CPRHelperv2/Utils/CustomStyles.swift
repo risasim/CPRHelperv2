@@ -77,7 +77,7 @@ struct PulsingToggleStyle: ToggleStyle {
         HStack {
             configuration.label
             RoundedRectangle(cornerRadius: 30)
-                .fill(configuration.isOn ? activeColor : Color(.systemGray))
+                .fill(configuration.isOn ? activeColor : Color.gray)
                 .overlay {
                     Circle()
                         .fill(.white)
@@ -85,10 +85,10 @@ struct PulsingToggleStyle: ToggleStyle {
                         .overlay {
                             if(configuration.isOn || nonCustom){
                                 Image(systemName: configuration.isOn ? systemImageActive : systemImageNonActive)
-                                    .foregroundColor(configuration.isOn ? activeColor : Color(.systemGray5))
+                                    .foregroundColor(configuration.isOn ? activeColor : Color(UIColor.systemGray5))
                             }else{
                                 Image(systemImageNonActive)
-                                    .foregroundColor(configuration.isOn ? activeColor : Color(.systemGray5))
+                                    .foregroundColor(configuration.isOn ? activeColor : Color(UIColor.systemGray5))
                             }
                         }
                         .offset(x: configuration.isOn ? 14 : -14)

@@ -57,14 +57,20 @@ class CPRAudioModel {
 #if DEBUG
         self.soundOn = false
 #endif
+        #if os(iOS)
         let volume = MPVolumeView().subviews.first(where: { $0 is UISlider }) as? UISlider
         volume?.value = 1
+        #endif
     }
     
     //Prepares before playng the sounds
     private func setupAudioSession() {
         do {
+#if os(watchOS)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            #else
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.defaultToSpeaker, .mixWithOthers])
+#endif
             try AVAudioSession.sharedInstance().setActive(true)
             
             NotificationCenter.default.addObserver(self,

@@ -7,16 +7,19 @@
 import Foundation
 import UIKit
 import AVKit
+import SwiftUI
+
 
 protocol OpenURLProtocol {
     func open(_ url: URL)
 }
-
+#if !os(watchOS)
 extension UIApplication: OpenURLProtocol {
     func open(_ url: URL) {
         open(url, options: [:], completionHandler: nil)
     }
 }
+#endif
 
 ///Class that is handlind the timing and the calling in ``EmergencyView``
 @Observable
@@ -25,12 +28,18 @@ final class EmergencyModel {
     private var stopwatchTimer: Timer?
     private var elapsedTime: TimeInterval = 0
     
-    let openURL: OpenURLProtocol
+    let openURL: OpenURLProtocol?
     var audioModel: CPRAudioModel = CPRAudioModel()
     
+#if !os(watchOS)
     init(openURL: OpenURLProtocol = UIApplication.shared) {
         self.openURL = openURL
     }
+    #else
+    init(){
+        self.openURL=nil
+    }
+#endif
     
     ///Starts the timer to show how long is the cpr performed for.
     func startTimer() {
@@ -54,7 +63,8 @@ final class EmergencyModel {
         let emergencyNumber = UserDefaults.standard.string(forKey: "emergencyNumber") ?? "911"
         DispatchQueue.main.async {
             guard let url = URL(string: "tel://\(emergencyNumber)") else { return }
-            self.openURL.open(url)
+            guard let URL = self.openURL else {return}
+            URL.open(url)
         }
     }
 }
