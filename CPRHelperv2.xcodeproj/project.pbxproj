@@ -81,6 +81,7 @@
 				Models/EmergencyModel.swift,
 				Utils/CustomStyles.swift,
 				Utils/Extensions.swift,
+				Views/Emergency/PuslingView.swift,
 				Views/Main/AnimatedAppLabel.swift,
 				Views/Main/WornOutTextureView.swift,
 			);
@@ -786,6 +787,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = CPRHelperWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = risasimonik.CPRHelperv2;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -816,6 +818,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = CPRHelperWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = risasimonik.CPRHelperv2;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

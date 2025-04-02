@@ -23,8 +23,10 @@ struct MainView: View {
                     })
             } label: {
                 Label("Emergency", systemImage: "waveform.path.ecg")
+                    .frame(maxWidth: .infinity)
                     .font(.headline)
                     .padding()
+                    .padding(.vertical,20)
                     .background {
                         ZStack{
                             Color.red
