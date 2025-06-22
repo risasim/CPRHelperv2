@@ -32,14 +32,14 @@ struct MainView: View {
                             model.startTimer()
                         })
                 } label: {
-                    Label("Emergency", systemImage: "waveform.path.ecg")
+                    Label("MainView.emergency", systemImage: "waveform.path.ecg")
                         .font(.largeTitle)
                         .labelStyle(MainLabelStyle(isEmergency: true))
                 }
                 Button {
                     practiceActive.toggle()
                 } label: {
-                    Label("Practice", systemImage: "heart.text.square.fill")
+                    Label("MainView.practice", systemImage: "heart.text.square.fill")
                         .font(.title)
                         .labelStyle(MainLabelStyle(isDotted: true))
                         .padding(.vertical)
@@ -47,7 +47,7 @@ struct MainView: View {
 
                 Spacer()
                 Button(action: {isInfoActive.toggle()}, label: {
-                    Label("Info", systemImage: "info.circle")
+                    Label("MainView.info", systemImage: "info.circle")
                         .frame(maxWidth: .infinity,maxHeight: 60)
                         .labelStyle(MainLabelStyle())
                 })
@@ -72,7 +72,7 @@ struct MainView: View {
                                         practiceDetailActive = false
                                     }
                                 } label: {
-                                    Label("Back", systemImage: "chevron.left")
+                                    Label("MainView.back", systemImage: "chevron.left")
                                         .padding(.leading)
                                         .padding(.bottom)
                                     
@@ -97,7 +97,7 @@ struct MainView: View {
                                             Button {
                                                 practiceDetailType!.isComplete.toggle()
                                             } label: {
-                                                Label("Got it!", systemImage: "checkmark")
+                                                Label("MainView.gotit", systemImage: "checkmark")
                                                     .padding()
                                             }
                                             Spacer()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A2FBAA92D6C515C008D97A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A2FBAA72D6C5156008D97A5 /* README.md */; };
+		4A84217B2E086DA700A92E37 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4A84217A2E086DA700A92E37 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		4A2FBAA72D6C5156008D97A5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4A84217A2E086DA700A92E37 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		4AB8021F2D32FAC300FE9E02 /* CPRHelperv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPRHelperv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB8022F2D32FAC500FE9E02 /* CPRHelperv2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPRHelperv2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB802392D32FAC500FE9E02 /* CPRHelperv2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPRHelperv2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 		4AB802162D32FAC300FE9E02 = {
 			isa = PBXGroup;
 			children = (
+				4A84217A2E086DA700A92E37 /* Localizable.xcstrings */,
 				4A2FBAAA2D6C523F008D97A5 /* images */,
 				4A2FBAA72D6C5156008D97A5 /* README.md */,
 				4AB802212D32FAC300FE9E02 /* CPRHelperv2 */,
@@ -205,6 +208,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = 4AB802162D32FAC300FE9E02;
 			minimizedProjectReferenceProxies = 1;
@@ -226,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A2FBAA92D6C515C008D97A5 /* README.md in Resources */,
+				4A84217B2E086DA700A92E37 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +347,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -398,6 +404,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

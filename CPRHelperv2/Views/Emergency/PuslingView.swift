@@ -15,7 +15,7 @@ struct PulsingView: View {
     
     var body: some View {
         VStack{
-            Text("Time: \(time)")
+            Text(String(localized:"PulsingView.time")+" \(time)")
                 .font(.title3)
                 .padding(.vertical,5)
                 .frame(maxWidth: .infinity)
@@ -39,13 +39,13 @@ struct PulsingView: View {
                     .offset(y:8)
             }
             HStack{
-                Toggle("Sound on", isOn: $audio.soundOn)
+                Toggle(String(localized:"PulsingView.soundOn"), isOn: $audio.soundOn)
                     .font(.headline)
                     .padding(5)
                     .toggleStyle(PulsingToggleStyle(systemImageActive: "speaker.wave.2", systemImageNonActive: "speaker.slash"))
                     .minimumScaleFactor(0.001)
                 Spacer(minLength: 40)
-                Toggle("With breaths", isOn: $audio.withBreaths)
+                Toggle(String(localized:"PulsingView.breathe"), isOn: $audio.withBreaths)
                     .font(.headline)
                     .padding(5)
                     .toggleStyle(PulsingToggleStyle(systemImageActive: "lungs", systemImageNonActive: "lungs.slash",nonCustom: false))

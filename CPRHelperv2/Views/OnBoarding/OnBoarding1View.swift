@@ -14,7 +14,7 @@ struct OnBoarding1View: View {
             VStack{
                 Spacer()
                 HStack{
-                    Text("Hello!")
+                    Text("Onbarding.hello")
                         .font(.largeTitle)
                         .padding()
                     Spacer()

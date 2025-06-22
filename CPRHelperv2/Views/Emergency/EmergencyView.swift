@@ -24,7 +24,7 @@ struct EmergencyView: View {
                     }
             }
             .frame(maxHeight: 250)
-            Text("Resuscitate until the ambulance arrive")
+            Text("EmergencyView.keepResc")
                 .bold()
                 .lineLimit(1)
                 .minimumScaleFactor(0.1)
@@ -37,7 +37,7 @@ struct EmergencyView: View {
         })
         .toolbar(content: {
             ToolbarItem(placement: .principal) {
-                Text("Keep yourself safe")
+                Text("EmergencyView.keepSafe")
                     .bold()
             }
         })

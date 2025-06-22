@@ -1,0 +1,414 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " You have resuscitated to quickly, try to sing Jingle Bells or Stayin Alive to keep rhytm." : {
+
+    },
+    "**1. Check the Scene** – Ensure the area is safe before approaching the person.  \n\n**2. Check Responsiveness** – Tap the person and shout, *\"Are you okay?\"* If there is no response, proceed. \n\n**3. Call for Help** – Dial emergency services (e.g., **112** in Europe, **911** in the U.S., you can set the default emergency number in the settings). If others are around, ask someone to get an **AED** (Automated External Defibrillator).  \n\n**4. Check for Breathing** – Look, listen, and feel for normal breathing for no more than **10 seconds**. If the person is not breathing or only gasping, start CPR.  " : {
+
+    },
+    "**5. Open the Airway** – Tilt the head back and lift the chin to prevent the tongue from blocking the airway." : {
+
+    },
+    "**6. Give Chest Compressions** –\n    - Place both hands in the center of the chest.\n    - Push hard and fast (*5-6 cm deep*). Do not be afraid to push, even if you hear some ribs breaking, at a rate of *100-120 compressions per minute*.\n    - Allow the chest to fully recoil between compressions.\n\n**7. Rescue Breaths (if trained)** \n    - Pinch the nose, give **two breaths**, ensuring the chest rises.\n    - Continue with **30 compressions**, then **2 breaths**.\n    - If unsure, stick to **hands-only CPR** (continuous compressions)." : {
+
+    },
+    "**8. Use an AED (if available)** – Follow its voice instructions.  \n\n**9. Continue CPR** – Do not stop until medical help arrives or the person starts breathing.  " : {
+
+    },
+    "**Modern CPR Development**\n\nThe 20th century witnessed significant advancements in CPR. In the 1950s, the combination of chest compressions and rescue breaths became standardized, forming the basis of modern CPR. The American Heart Association (AHA) played a pivotal role by developing science-based CPR guidelines and leading in first aid, CPR, and AED training. \n\nOver time, CPR guidelines have evolved to improve survival rates and outcomes. The AHA regularly updates these guidelines to reflect the latest scientific research and best practices, ensuring that responders provide the most effective care during cardiac emergencies. \n [American Heart Association (AHA)](https://cpr.heart.org/)\n\nToday, CPR is a fundamental skill taught worldwide, emphasizing the importance of immediate intervention in cardiac arrest situations to increase the chances of survival." : {
+
+    },
+    "%@" : {
+
+    },
+    "Back" : {
+
+    },
+    "CallView.callAmbulance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Call ambulance"
+          }
+        }
+      }
+    },
+    "Cardiopulmonary resuscitation (CPR) has evolved significantly over centuries, integrating various techniques to enhance its effectiveness.\n\n**Early Techniques**\n\nIn the 18th century, methods like artificial ventilation gained prominence. In 1732, Scottish surgeon William A. Tossach successfully used mouth-to-mouth resuscitation on a coal miner, marking one of the earliest documented cases of successful CPR in an adult. This event was widely witnessed and later published, influencing medical practices of the time. \n\nThe first organized effort to respond to sudden death emerged in 1767 with the formation of the Society for the Recovery of Drowned Persons in Amsterdam. This society recommended various resuscitation techniques, including mouth-to-mouth ventilation, warming the victim, and even rectal fumigation with tobacco smoke. Their methods reportedly saved over 150 individuals within four years, inspiring similar organizations across Europe and the United States. \n[Society for the Recovery of Drowned Persons](https://en.wikipedia.org/wiki/History_of_cardiopulmonary_resuscitation#Formation_of_rescue_societies)\n\n**Advancements in Defibrillation**\n\nIn 1775, Danish physician Peter Christian Abildgaard conducted experiments demonstrating that electrical shocks could revive lifeless animals, laying the groundwork for modern defibrillation techniques. Later, in 1792, English physician James Curry noted the distinction between absolute death and apparent death, emphasizing that the latter could be reversed through appropriate interventions, including external defibrillation.\n[Wikipedia](https://en.wikipedia.org/wiki/History_of_cardiopulmonary_resuscitation#Electrical_shocks)" : {
+
+    },
+    "Check" : {
+
+    },
+    "Correct!" : {
+
+    },
+    "Drag the steps to correct order:" : {
+
+    },
+    "EmergencyView.keepResc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resuscitate until the ambulance arrive"
+          }
+        }
+      }
+    },
+    "EmergencyView.keepSafe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep yourself safe"
+          }
+        }
+      }
+    },
+    "End" : {
+
+    },
+    "Estimation of final push/min" : {
+
+    },
+    "Freq" : {
+
+    },
+    "Go back" : {
+
+    },
+    "Good job, this is how it is supposed to be done." : {
+
+    },
+    "Hello" : {
+
+    },
+    "Here are some practice blocks for you to learn from" : {
+
+    },
+    "Here is your consistency:" : {
+
+    },
+    "History" : {
+
+    },
+    "How to Perform CPR" : {
+
+    },
+    "Incorrect" : {
+
+    },
+    "InfoView.aboutApp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About app"
+          }
+        }
+      }
+    },
+    "InfoView.appVersion" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App version"
+          }
+        }
+      }
+    },
+    "InfoView.compability" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compability"
+          }
+        }
+      }
+    },
+    "InfoView.developer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer"
+          }
+        }
+      }
+    },
+    "InfoView.emergencyNumber" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emergency phone number"
+          }
+        }
+      }
+    },
+    "InfoView.info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CPR Helper is an app that teaches CPR through simulations. Designed for the Swift Student Challenge 2025, it features step-by-step guidance and an emergency button to prepare users for real-life situations."
+          }
+        }
+      }
+    },
+    "InfoView.settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "Last push at cadence: %lld" : {
+
+    },
+    "Look again and try to picture the situation in your mind and what order would you do the steps." : {
+
+    },
+    "MainView.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        }
+      }
+    },
+    "MainView.emergency" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emergency"
+          }
+        }
+      }
+    },
+    "MainView.gotit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got it!"
+          }
+        }
+      }
+    },
+    "MainView.info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info"
+          }
+        }
+      }
+    },
+    "MainView.practice" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Practice"
+          }
+        }
+      }
+    },
+    "Next" : {
+
+    },
+    "Not quite right" : {
+
+    },
+    "Onbarding.hello" : {
+
+    },
+    "Onboarding.close" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exit onboarding"
+          }
+        }
+      }
+    },
+    "Onboarding.hello" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello!"
+          }
+        }
+      }
+    },
+    "Onboarding.legal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The CPR Helper app is designed for informational and educational purposes only. It does not replace professional medical training, certification, or emergency services. The app provides guidance based on established CPR principles; however, it does not guarantee accuracy, effectiveness, or appropriateness in any specific situation.\n\n    By using this app, you acknowledge and agree that:\n\n    You are solely responsible for your actions and decisions when performing CPR.\n    The developers, distributors, and affiliates of this app are not liable for any injuries, damages, or outcomes resulting from the use or inability to use this app.\n    This app is not a substitute for professional medical advice, emergency medical services, or hands-on CPR training.\n    If you encounter a medical emergency, you should call emergency services immediately.\n    Limitation of Liability\n    To the fullest extent permitted by law, the CPR Helper app and its creators disclaim all liability for any direct, indirect, incidental, consequential, or special damages arising from or related to the use of this app, including but not limited to injury, death, or legal claims.\n\n    By continuing to use this app, you confirm that you understand and accept these terms."
+          }
+        }
+      }
+    },
+    "Onboarding.legalTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Before you dive in to app, some legal stuff:"
+          }
+        }
+      }
+    },
+    "Placement is key to correct CPR, try to remember form the chapter about How to do CPR the right placement." : {
+
+    },
+    "Practice" : {
+
+    },
+    "PulsingView.breathe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With breaths"
+          }
+        }
+      }
+    },
+    "PulsingView.soundOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sound on"
+          }
+        }
+      }
+    },
+    "PulsingView.time" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time: "
+          }
+        }
+      }
+    },
+    "Quiz" : {
+
+    },
+    "Resuscitate" : {
+
+    },
+    "Rule" : {
+
+    },
+    "Score: %lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Score: %1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "set.linkLang" : {
+
+    },
+    "Slow down cowboy!" : {
+
+    },
+    "Sound on" : {
+
+    },
+    "Source of information (Red Cross)" : {
+
+    },
+    "Start" : {
+
+    },
+    "Take quiz" : {
+
+    },
+    "The correct area for CPR is in the center of the chest, between the nipples." : {
+
+    },
+    "The ideal frequency should be between 100-120 push/min and with depth of 6cm (one package of TicTac)." : {
+
+    },
+    "Time" : {
+
+    },
+    "Train where to do CPR" : {
+
+    },
+    "Try Again" : {
+
+    },
+    "Try to tap to a place where you think you should perform CPR" : {
+
+    },
+    "Welcome to CPR Helper. My name is Richard, and I created this app to educate users on how to perform CPR and, in case of an unfortunate event, possibly even help them. The app consists of two main elements:" : {
+
+    },
+    "With breaths" : {
+
+    },
+    "With the right rhytm and the timing of breaths (if you decide to do them) there is the audio aid, if you are going to do a compression on the beep, you will have cadence of 100 compressions/minute." : {
+
+    },
+    "You have resuscitated to slow, try to sing Jingle Bells or Stayin Alive to keep rhytm." : {
+
+    },
+    "You need to be quicker next time!" : {
+
+    },
+    "You've identified the correct area for CPR." : {
+
+    },
+    "Your final frequency was %lld push/min." : {
+
+    }
+  },
+  "version" : "1.0"
+}

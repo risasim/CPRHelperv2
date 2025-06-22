@@ -12,7 +12,7 @@ struct CallView: View {
     var body: some View {
         VStack(alignment: .center){
             Image(systemName: "phone")
-            Text("Call ambulance")
+            Text("CallView.callAmbulance")
                 .padding(.horizontal,5)
                 .multilineTextAlignment(.center)
         }
