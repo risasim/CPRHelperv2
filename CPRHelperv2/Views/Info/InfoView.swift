@@ -58,7 +58,7 @@ struct InfoView: View {
             }.borderedBackground()
             GroupBox(content: {
                 InfoRowView(label: "Developer", description: "Richard Šimoník")
-                InfoRowView(label: "Compability", description: "iOS 18")
+                InfoRowView(label: "Compability", description: "iOS 26")
                 InfoRowView(label: "Instagram", linkLabel: "@risasimonik", linkDestination: "instagram.com/risasimonik")
                 InfoRowView(label: "X", linkLabel: "@richiesimonik", linkDestination: "twitter.com/richiesimonik")
                 InfoRowView(label: "SwiftUI", description: "6.0")

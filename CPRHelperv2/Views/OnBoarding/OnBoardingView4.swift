@@ -31,7 +31,6 @@ struct OnBoardingView4: View {
     By continuing to use this app, you confirm that you understand and accept these terms.
     """)
             .font(.caption2)
-            Spacer()
             Button {
                 opened = true
             } label: {
@@ -40,6 +39,8 @@ struct OnBoardingView4: View {
                     .borderedBackground()
             }
             .buttonStyle(.plain)
+            .padding(.top,30)
+            Spacer()
         }
         .padding()
     }
